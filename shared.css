@@ -145,7 +145,7 @@ a { color: inherit; text-decoration: none; }
 .floating-wa {
   position: fixed;
   right: 18px;
-  bottom: 18px;
+  bottom: calc(18px + env(safe-area-inset-bottom, 0px));
   width: 58px;
   height: 58px;
   border-radius: 50%;
@@ -727,7 +727,7 @@ footer {
   footer { padding: 50px 20px 86px; }
   .floating-wa {
     right: 14px;
-    bottom: 14px;
+    bottom: calc(14px + env(safe-area-inset-bottom, 0px));
     width: 54px;
     height: 54px;
   }
@@ -754,7 +754,7 @@ footer {
   footer { padding: 44px 14px 82px; }
   .floating-wa {
     right: 10px;
-    bottom: 10px;
+    bottom: calc(10px + env(safe-area-inset-bottom, 0px));
     width: 48px;
     height: 48px;
   }
@@ -798,7 +798,7 @@ footer {
   footer { padding: 40px 12px 78px; }
   .floating-wa {
     right: 8px;
-    bottom: 8px;
+    bottom: calc(8px + env(safe-area-inset-bottom, 0px));
     width: 46px;
     height: 46px;
   }

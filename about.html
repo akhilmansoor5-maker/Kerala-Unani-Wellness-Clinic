@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
   <title>About — Kerala Unani Wellness Clinic</title>
   <meta name="description" content="Meet Hakim Anees Rahman K — Unani Wellness Consultant, HCPC Paramedic, and founder of Kerala Unani Wellness Clinic in Gerrards Cross, UK.">
   <meta name="keywords" content="About Kerala Unani Wellness, Hakim Anees Rahman, Unani doctor Gerrards Cross, holistic clinic Buckinghamshire">
@@ -109,6 +109,11 @@
     /* ─── Doctor Profile ─── */
     .doctor-section { background: radial-gradient(circle at 50% 0, rgba(184,154,90,0.14), transparent 42%), #130f0c; }
     .doctor-inner { max-width: var(--max-w); margin: 0 auto; padding: 78px 24px; }
+    .doctor-section-intro {
+      text-align: center;
+      margin-bottom: 40px;
+    }
+    .doctor-section-intro .ornament { margin: 12px auto 0; }
     .doctor-grid {
       display: grid;
       grid-template-columns: 380px 1fr;
@@ -255,6 +260,7 @@
       .story-image { position: static; top: auto; }
       .doctor-grid { grid-template-columns: 1fr; }
       .doctor-inner { padding: 44px 18px; }
+      .doctor-section-intro { margin-bottom: 22px; }
       .doctor-rail { position: static; top: auto; }
       .doctor-image { height: 360px; }
       .doctor-badge {
@@ -282,7 +288,9 @@
       .story-grid { padding: 34px 14px; gap: 20px; }
       .story-image { height: 240px; }
       .doctor-inner { padding: 34px 14px; }
-      .doctor-grid { gap: 20px; }
+      .doctor-section-intro { margin-bottom: 16px; }
+      .doctor-section-intro h2 { font-size: clamp(1.45rem, 6.5vw, 1.85rem); }
+      .doctor-grid { gap: 16px; }
       .doctor-image { height: 280px; }
       .doctor-badge { padding: 10px 12px; }
       .doctor-rail-note { font-size: 0.78rem; }
@@ -295,6 +303,7 @@
       .page-hero h1 { font-size: clamp(1.55rem, 7.8vw, 1.95rem); }
       .story-grid { padding: 28px 12px; }
       .doctor-inner { padding: 28px 12px; }
+      .doctor-section-intro { margin-bottom: 12px; }
       .doctor-image { height: 240px; }
       .approach-inner { padding: 28px 12px; }
     }
@@ -373,7 +382,7 @@
 <!-- ─── Doctor Profile ─── -->
 <section class="doctor-section">
   <div class="doctor-inner">
-    <div style="text-align: center; margin-bottom: 56px;">
+    <div class="doctor-section-intro">
       <span class="eyebrow">Our Specialist</span>
       <h2>Meet Hakim Anees Rahman K</h2>
       <div class="ornament" style="max-width: 240px; margin: 0 auto;"><span class="ornament-icon">✦</span></div>
