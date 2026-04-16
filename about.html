@@ -19,8 +19,10 @@
   <style>
     /* ─── Page Hero ─── */
     .page-hero {
-      background: linear-gradient(135deg, #4b1e17 0%, #6a2c20 52%, #8e4a33 100%);
-      padding: 80px 24px 72px;
+      background:
+        linear-gradient(120deg, rgba(18,14,11,0.82), rgba(18,14,11,0.72)),
+        url("Gallery/WhatsApp Image 2026-04-15 at 5.15.27 PM (1).jpeg") center/cover no-repeat;
+      padding: 60px 24px 64px;
       text-align: center;
       position: relative;
       overflow: hidden;
@@ -37,39 +39,111 @@
       pointer-events: none;
     }
     .page-hero .eyebrow { color: var(--gold-light); }
-    .page-hero h1 { color: var(--white); margin-bottom: 16px; }
-    .page-hero p { color: rgba(255,255,255,0.72); max-width: 560px; margin: 0 auto; }
-
+    .hero-booking {
+      max-width: var(--max-w);
+      margin: 0 auto;
+      display: block;
+      text-align: left;
+    }
+    .hero-copy {
+      position: relative;
+      z-index: 1;
+      padding: 8px 0;
+      max-width: 760px;
+    }
+    .page-hero h1 {
+      color: var(--clr-bg);
+      margin-bottom: 14px;
+      max-width: 19ch;
+      line-height: 1.08;
+      font-size: clamp(2.15rem, 4.1vw, 3.25rem);
+    }
+    .page-hero p {
+      color: rgba(250,248,243,0.78);
+      max-width: 62ch;
+      margin: 0 0 22px;
+      font-size: 1rem;
+    }
+    .hero-contact-points {
+      display: grid;
+      gap: 11px;
+      max-width: 620px;
+    }
+    .hero-contact-item {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      color: rgba(250,248,243,0.92);
+      font-size: 0.92rem;
+      font-weight: 500;
+    }
+    .hero-contact-item::before {
+      content: "";
+      width: 8px;
+      height: 8px;
+      border-radius: 50%;
+      background: var(--gold-light);
+      box-shadow: 0 0 0 5px rgba(214,170,104,0.14);
+      flex-shrink: 0;
+    }
     /* ─── Story ─── */
     .story-grid {
       display: grid;
       grid-template-columns: 1fr 1fr;
-      gap: 80px;
+      gap: 52px;
       align-items: center;
       max-width: var(--max-w);
       margin: 0 auto;
-      padding: var(--section-pad);
+      padding: 76px 24px;
     }
-    .story-image { height: 500px; border-radius: var(--radius-lg); overflow: hidden; }
+    .story-image {
+      height: 500px;
+      border-radius: var(--radius-lg);
+      overflow: hidden;
+      position: sticky;
+      top: 130px;
+    }
     .story-text h2 { margin-bottom: 20px; }
     .story-text p { margin-bottom: 16px; }
 
     /* ─── Doctor Profile ─── */
-    .doctor-section { background: var(--white); }
-    .doctor-inner { max-width: var(--max-w); margin: 0 auto; padding: var(--section-pad); }
+    .doctor-section { background: radial-gradient(circle at 50% 0, rgba(184,154,90,0.14), transparent 42%), #130f0c; }
+    .doctor-inner { max-width: var(--max-w); margin: 0 auto; padding: 78px 24px; }
     .doctor-grid {
       display: grid;
       grid-template-columns: 380px 1fr;
-      gap: 64px;
-      align-items: start;
+      gap: 44px;
+      align-items: stretch;
+      position: relative;
     }
-    .doctor-image { height: 520px; border-radius: var(--radius-lg); overflow: hidden; position: relative; }
+    .doctor-rail {
+      position: sticky;
+      top: 122px;
+      display: grid;
+      gap: 16px;
+      align-self: start;
+    }
+    .doctor-image {
+      height: 520px;
+      border-radius: var(--radius-lg);
+      overflow: hidden;
+      position: relative;
+    }
+    .doctor-rail-note {
+      background: rgba(255,248,236,0.1);
+      border: 1px solid rgba(232,217,184,0.3);
+      border-radius: 14px;
+      padding: 12px 14px;
+      color: rgba(255,245,228,0.88);
+      font-size: 0.82rem;
+      line-height: 1.55;
+    }
     .doctor-badge {
       position: absolute;
       bottom: 24px;
       left: 50%;
       transform: translateX(-50%);
-      background: var(--white);
+      background: var(--clr-surface);
       border: 1px solid var(--border);
       border-radius: var(--radius-lg);
       padding: 14px 20px;
@@ -79,9 +153,11 @@
     .doctor-badge strong { display: block; font-family: var(--font-display); font-size: 1rem; color: var(--text-dark); }
     .doctor-badge small { font-size: 0.75rem; color: var(--text-muted); }
 
-    .doctor-bio h2 { margin-bottom: 6px; }
+    .doctor-bio h2 { margin-bottom: 6px; color: rgba(255,245,228,0.94); }
     .doctor-bio .title { font-size: 0.85rem; color: var(--gold); font-weight: 500; letter-spacing: 0.06em; margin-bottom: 24px; display: block; }
-    .doctor-bio p { margin-bottom: 16px; }
+    .doctor-bio p { margin-bottom: 16px; color: rgba(255,245,228,0.88); }
+    .doctor-section .eyebrow { color: var(--gold-light); }
+    .doctor-section > .doctor-inner > div h2 { color: rgba(255,245,228,0.94); }
 
     .expertise-grid {
       display: grid;
@@ -95,12 +171,13 @@
       gap: 10px;
       font-size: 0.87rem;
       padding: 12px 14px;
-      background: var(--cream);
+      background: rgba(255,248,236,0.12);
       border-radius: var(--radius);
+      color: rgba(255,245,228,0.92);
     }
     .expertise-item::before {
       content: '✓';
-      color: var(--maroon);
+      color: var(--gold-light);
       font-weight: 500;
       flex-shrink: 0;
     }
@@ -108,13 +185,13 @@
     .qualifications {
       margin: 28px 0;
       padding: 24px;
-      background: var(--cream);
+      background: rgba(255,248,236,0.08);
       border-left: 3px solid var(--gold);
       border-radius: 0 var(--radius) var(--radius) 0;
     }
     .qualifications h4 { font-family: var(--font-body); font-size: 0.72rem; font-weight: 500; letter-spacing: 0.14em; text-transform: uppercase; color: var(--gold); margin-bottom: 14px; }
     .qual-list { list-style: none; display: flex; flex-direction: column; gap: 8px; }
-    .qual-list li { font-size: 0.87rem; padding-left: 16px; position: relative; }
+    .qual-list li { font-size: 0.87rem; padding-left: 16px; position: relative; color: rgba(255,245,228,0.88); }
     .qual-list li::before { content: '—'; position: absolute; left: 0; color: var(--text-muted); }
 
     .philosophy-block {
@@ -127,25 +204,26 @@
       font-family: var(--font-display);
       font-size: 1.2rem;
       font-style: normal;
-      color: var(--white);
+      color: var(--clr-bg);
       line-height: 1.6;
     }
     .philosophy-block cite { display: block; margin-top: 12px; font-size: 0.78rem; color: var(--gold-light); font-style: normal; letter-spacing: 0.08em; }
 
     /* ─── Approach ─── */
     .approach-section { background: var(--cream-dark); }
-    .approach-inner { max-width: var(--max-w); margin: 0 auto; padding: var(--section-pad); }
+    .approach-inner { max-width: var(--max-w); margin: 0 auto; padding: 72px 24px; }
     .approach-intro { text-align: center; max-width: 580px; margin: 0 auto 56px; }
     .approach-cards { display: grid; grid-template-columns: repeat(3, 1fr); gap: 24px; }
     .approach-card {
-      background: var(--white);
+      background: var(--clr-surface);
       border-radius: var(--radius-lg);
       border: 1px solid var(--border);
       padding: 36px 28px;
     }
     .approach-num {
-      font-family: var(--font-display);
-      font-size: 2.4rem;
+      font-family: var(--font-body);
+      font-size: 2rem;
+      font-weight: 700;
       color: var(--gold);
       opacity: 0.5;
       display: block;
@@ -155,10 +233,70 @@
     .approach-card p { font-size: 0.9rem; }
 
     @media (max-width: 900px) {
+      .page-hero {
+        padding: 44px 18px 40px;
+      }
+      .hero-booking {
+        display: block;
+      }
+      .page-hero h1 {
+        font-size: clamp(1.9rem, 8vw, 2.5rem);
+        max-width: 16ch;
+      }
+      .page-hero p {
+        font-size: 0.94rem;
+        margin: 0 0 18px;
+      }
+      .hero-copy,
+      .hero-contact-points { max-width: 100%; }
       .story-grid { grid-template-columns: 1fr; }
+      .story-grid { gap: 28px; padding: 44px 18px; }
+      .story-image { height: 300px; }
+      .story-image { position: static; top: auto; }
       .doctor-grid { grid-template-columns: 1fr; }
+      .doctor-inner { padding: 44px 18px; }
+      .doctor-rail { position: static; top: auto; }
+      .doctor-image { height: 360px; }
+      .doctor-badge {
+        width: calc(100% - 32px);
+        left: 16px;
+        right: 16px;
+        bottom: 16px;
+        transform: none;
+        white-space: normal;
+      }
+      .doctor-bio .title {
+        font-size: 0.8rem;
+        line-height: 1.45;
+      }
+      .qualifications { padding: 18px; }
+      .philosophy-block { padding: 22px 18px; }
       .approach-cards { grid-template-columns: 1fr; }
+      .approach-inner { padding: 44px 18px; }
       .expertise-grid { grid-template-columns: 1fr; }
+    }
+    @media (max-width: 480px) {
+      .page-hero { padding: 36px 14px 34px; }
+      .page-hero h1 { max-width: 100%; font-size: clamp(1.7rem, 8.6vw, 2.1rem); }
+      .hero-contact-item { font-size: 0.85rem; }
+      .story-grid { padding: 34px 14px; gap: 20px; }
+      .story-image { height: 240px; }
+      .doctor-inner { padding: 34px 14px; }
+      .doctor-grid { gap: 20px; }
+      .doctor-image { height: 280px; }
+      .doctor-badge { padding: 10px 12px; }
+      .doctor-rail-note { font-size: 0.78rem; }
+      .expertise-item { font-size: 0.82rem; padding: 10px 12px; }
+      .approach-inner { padding: 34px 14px; }
+      .philosophy-block blockquote { font-size: 1.02rem; line-height: 1.5; }
+    }
+    @media (max-width: 360px) {
+      .page-hero { padding: 30px 12px 28px; }
+      .page-hero h1 { font-size: clamp(1.55rem, 7.8vw, 1.95rem); }
+      .story-grid { padding: 28px 12px; }
+      .doctor-inner { padding: 28px 12px; }
+      .doctor-image { height: 240px; }
+      .approach-inner { padding: 28px 12px; }
     }
   </style>
   <script type="application/ld+json">
@@ -182,8 +320,9 @@
 <nav>
   <div class="nav-inner">
     <a href="index.html" class="nav-logo">
-      Kerala Unani
-      <span>Wellness Clinic</span>
+      <span class="nav-logo-wordmark">Kerala Unani</span>
+      <span class="nav-logo-line" aria-hidden="true"></span>
+      <span class="nav-logo-tag">Wellness Clinic</span>
     </a>
     <button class="nav-toggle" type="button" aria-label="Toggle navigation" aria-expanded="false"><span></span></button>
     <ul class="nav-links">
@@ -199,15 +338,22 @@
 
 <!-- ─── Page Hero ─── -->
 <section class="page-hero">
-  <div class="container">
-    <span class="eyebrow">Our Story</span>
-    <h1>Rooted in tradition,<br>refined by modern care</h1>
-    <p>Kerala Unani Wellness Clinic brings the healing wisdom of Unani medicine to the United Kingdom — where ancient knowledge meets modern clinical standards.</p>
+  <div class="hero-booking">
+    <div class="hero-copy">
+      <span class="eyebrow">Our Story</span>
+      <h1>Rooted in tradition, refined for today.</h1>
+      <p>Kerala Unani Wellness Clinic was created to bring thoughtful, personalised Unani care to patients in the UK through a calm setting, clear clinical standards, and a genuinely human approach.</p>
+      <div class="hero-contact-points">
+        <div class="hero-contact-item">Authentic Unani philosophy with modern patient care values</div>
+        <div class="hero-contact-item">Led by Hakim Anees Rahman K with 15+ years of experience</div>
+        <div class="hero-contact-item">Focused on long-term balance, not symptom-only treatment</div>
+      </div>
+    </div>
   </div>
 </section>
 
 <!-- ─── Clinic Story ─── -->
-<section style="padding: 0; background: var(--cream);">
+<section style="padding: 0; background: var(--clr-bg);">
   <div class="story-grid">
     <div class="story-image">
       <img class="img-cover" src="Gallery/WhatsApp Image 2026-04-15 at 5.15.27 PM (1).jpeg" alt="Kerala Unani clinic exterior at Bliss Gx">
@@ -234,12 +380,15 @@
     </div>
     <div class="doctor-grid">
       <div>
-        <div class="doctor-image">
-          <img class="img-cover" src="Gallery/WhatsApp Image 2026-04-15 at 5.15.31 PM.jpeg" alt="Hakim Anees Rahman K portrait">
-          <div class="doctor-badge">
-            <strong>Hakim Anees Rahman K</strong>
-            <small>Unani Wellness Consultant</small>
+        <div class="doctor-rail">
+          <div class="doctor-image">
+            <img class="img-cover" src="Gallery/hakim-anees-rahman.jpg" alt="Hakim Anees Rahman K portrait">
+            <div class="doctor-badge">
+              <strong>Hakim Anees Rahman K</strong>
+              <small>Unani Wellness Consultant</small>
+            </div>
           </div>
+          <div class="doctor-rail-note">Holistic care rooted in tradition, delivered with modern clinical discipline and patient-first clarity.</div>
         </div>
       </div>
       <div class="doctor-bio">

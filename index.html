@@ -21,58 +21,141 @@
   <link rel="stylesheet" href="shared.css">
   <style>
     /* ─── Hero ─── */
-    .hero {
-      min-height: 90vh;
-      display: grid;
-      grid-template-columns: 1fr 1fr;
-      align-items: center;
-      gap: 64px;
-      max-width: var(--max-w);
-      margin: 0 auto;
-      padding: 80px 24px;
-    }
-    .hero-text { max-width: 520px; }
-    .hero-text h1 { margin-bottom: 24px; }
-    .hero-text h1 em { color: var(--maroon); font-style: normal; }
-    .hero-text p { font-size: 1.05rem; max-width: 420px; margin-bottom: 36px; }
-    .hero-actions { display: flex; gap: 16px; flex-wrap: wrap; }
-    .hero-trust {
-      display: flex;
-      gap: 32px;
-      margin-top: 48px;
-      padding-top: 32px;
-      border-top: 1px solid var(--border);
-    }
-    .trust-item { text-align: center; }
-    .trust-item strong { display: block; font-family: var(--font-display); font-size: 1.6rem; color: var(--maroon); }
-    .trust-item span { font-size: 0.78rem; color: var(--text-muted); font-weight: 400; }
-    .hero-image {
-      height: 560px;
+    .hero-wrap {
       position: relative;
-      border-radius: var(--radius-lg);
+      min-height: 100vh;
+      padding: 0;
+      border-bottom: 1px solid var(--border);
       overflow: hidden;
+      display: grid;
+      place-items: start center;
+      isolation: isolate;
     }
-    .hero-badge {
+    .hero-media {
       position: absolute;
-      bottom: 28px;
-      left: 28px;
-      background: rgba(250,248,243,0.96);
-      border: 1px solid var(--border);
-      border-radius: var(--radius-lg);
-      padding: 16px 20px;
-      backdrop-filter: blur(4px);
+      inset: 0;
+      z-index: -2;
     }
-    .hero-badge p { font-size: 0.78rem; color: var(--text-muted); margin: 0; }
-    .hero-badge strong { font-family: var(--font-display); font-size: 1rem; color: var(--text-dark); }
+    .hero-media img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      transform: scale(1.06);
+      animation: heroParallax 20s ease-out forwards;
+    }
+    .hero-media::after {
+      content: "";
+      position: absolute;
+      inset: 0;
+      background:
+        radial-gradient(circle at 50% 25%, rgba(197,160,89,0.2), transparent 34%),
+        linear-gradient(180deg, rgba(14,10,7,0.28) 0%, rgba(14,10,7,0.72) 56%, rgba(14,10,7,0.9) 100%);
+    }
+    .hero-core {
+      position: relative;
+      z-index: 2;
+      width: min(1100px, calc(100% - 48px));
+      text-align: left;
+      padding: 62px 16px 20px 44px;
+      animation: heroFadeIn 820ms cubic-bezier(0.22, 1, 0.36, 1) both;
+    }
+    .hero-signature {
+      display: inline-flex;
+      align-items: center;
+      gap: 10px;
+      color: rgba(255,246,230,0.84);
+      font-size: 0.74rem;
+      font-weight: 600;
+      letter-spacing: 0.16em;
+      text-transform: uppercase;
+      margin-bottom: 18px;
+    }
+    .hero-signature::before,
+    .hero-signature::after {
+      content: "";
+      width: 28px;
+      height: 1px;
+      background: rgba(232,217,184,0.62);
+    }
+    .hero-overline {
+      display: block;
+      color: rgba(255,248,235,0.84);
+      font-size: 0.78rem;
+      letter-spacing: 0.16em;
+      text-transform: uppercase;
+      margin-bottom: 16px;
+      font-weight: 600;
+    }
+    .hero-heading {
+      margin: 0 0 18px;
+      max-width: 38ch;
+      color: #fff8ec;
+      font-size: clamp(1.9rem, 3.35vw, 3.05rem);
+      line-height: 1.02;
+      letter-spacing: 0.015em;
+      text-shadow: 0 12px 34px rgba(8,6,5,0.34);
+    }
+    .hero-heading em {
+      color: var(--gold-light);
+      font-style: normal;
+      font-weight: 700;
+    }
+    .hero-copy {
+      max-width: 58ch;
+      margin: 0 0 26px;
+      color: rgba(255,245,230,0.9);
+      font-size: clamp(0.92rem, 1.35vw, 1.02rem);
+      line-height: 1.7;
+    }
+    .hero-action {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      min-width: 220px;
+      padding: 15px 28px;
+      border-radius: 2px;
+      background: linear-gradient(180deg, var(--gold-light) 0%, var(--gold) 100%);
+      border: 1px solid rgba(232,217,184,0.48);
+      color: #2a1b12;
+      font-size: 0.78rem;
+      font-weight: 700;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      box-shadow: 0 14px 28px rgba(18,12,9,0.34);
+      transition: transform 260ms ease, box-shadow 260ms ease, filter 260ms ease;
+    }
+    .hero-action:hover {
+      transform: translateY(-3px) scale(1.02);
+      box-shadow: 0 20px 34px rgba(15,10,7,0.4);
+      filter: brightness(1.03);
+    }
+    @keyframes heroFadeUp {
+      from { opacity: 0; transform: translateY(24px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+    @keyframes heroFadeIn {
+      from { opacity: 0; transform: translateY(28px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+    @keyframes heroParallax {
+      from { transform: scale(1.08) translateY(0); }
+      to { transform: scale(1.02) translateY(-10px); }
+    }
 
     /* ─── Services strip ─── */
-    .services-intro { text-align: center; max-width: 600px; margin: 0 auto 64px; }
+    .section-white {
+      background: var(--clr-bg);
+      color: var(--text-body);
+    }
+    .services-intro { text-align: center; max-width: 660px; margin: 0 auto 46px; }
+    .services-intro h2 { color: var(--text-dark); }
+    .services-intro p { color: var(--text-body); }
     .services-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 24px; }
     .service-card {
-      background: var(--white);
+      background: var(--clr-surface);
       border: 1px solid var(--border);
       border-radius: var(--radius-lg);
-      padding: 40px 32px;
+      padding: 30px 24px;
       transition: transform 0.25s, box-shadow 0.25s;
       position: relative;
       overflow: hidden;
@@ -98,9 +181,19 @@
     }
     .service-icon svg { color: var(--maroon); }
     .service-card h3 { margin-bottom: 12px; }
+    .service-card h3 { color: var(--text-dark); }
+    .service-card p { color: var(--text-body); }
     .service-card p { font-size: 0.9rem; margin-bottom: 24px; }
     .service-link { font-size: 0.82rem; font-weight: 500; color: var(--maroon); letter-spacing: 0.04em; }
     .service-link::after { content: ' →'; }
+
+    .section-cream {
+      background: radial-gradient(circle at 50% 0, rgba(184,154,90,0.16), transparent 42%), #130f0c;
+      color: rgba(255,245,228,0.9);
+    }
+    .section-cream h2,
+    .section-cream h3 { color: rgba(255,245,228,0.95); }
+    .section-cream p { color: rgba(255,245,228,0.88); }
 
     /* ─── About teaser ─── */
     .about-teaser {
@@ -111,54 +204,123 @@
       max-width: var(--max-w);
       margin: 0 auto;
       padding: var(--section-pad);
+      border: 1px solid rgba(232,217,184,0.24);
+      border-radius: 24px;
+      background: linear-gradient(160deg, rgba(255,248,236,0.14), rgba(255,248,236,0.06));
+      backdrop-filter: blur(8px);
     }
-    .about-image { height: 520px; border-radius: var(--radius-lg); overflow: hidden; }
+    .about-image { height: 520px; border-radius: var(--radius-lg); overflow: hidden; box-shadow: 0 22px 40px rgba(8,6,5,0.38); }
     .about-text .eyebrow { display: block; }
-    .about-text h2 { margin-bottom: 20px; }
-    .about-text p { margin-bottom: 16px; }
+    .about-text h2 { margin-bottom: 20px; color: rgba(255,245,228,0.95); }
+    .about-text p { margin-bottom: 16px; color: rgba(255,245,228,0.88); }
     .credentials { margin: 28px 0; display: flex; flex-direction: column; gap: 10px; }
-    .cred-item { display: flex; align-items: center; gap: 10px; font-size: 0.87rem; }
+    .cred-item { display: flex; align-items: center; gap: 10px; font-size: 0.87rem; color: rgba(255,245,228,0.9); }
     .cred-dot { width: 6px; height: 6px; background: var(--gold); border-radius: 50%; flex-shrink: 0; }
 
     /* ─── Testimonial ─── */
     .testimonial-section { background: var(--maroon); padding: var(--section-pad); }
     .testimonial-inner { max-width: 800px; margin: 0 auto; text-align: center; }
     .quote-mark { font-family: var(--font-display); font-size: 6rem; line-height: 0.6; color: var(--gold); opacity: 0.4; margin-bottom: 16px; display: block; }
-    .testimonial-text { font-family: var(--font-display); font-size: 1.6rem; font-style: normal; color: var(--white); line-height: 1.5; margin-bottom: 28px; }
+    .testimonial-text { font-family: var(--font-display); font-size: 1.6rem; font-style: normal; color: var(--clr-bg); line-height: 1.5; margin-bottom: 28px; }
     .testimonial-author { font-size: 0.83rem; color: var(--gold-light); letter-spacing: 0.1em; text-transform: uppercase; }
+
+    .lux-section {
+      background: linear-gradient(180deg, #fbf9f4 0%, #f5efe3 100%);
+    }
 
     /* ─── CTA band ─── */
     .cta-band {
-      background: var(--cream-dark);
-      border-top: 1px solid var(--cream-mid);
-      border-bottom: 1px solid var(--cream-mid);
+      background: linear-gradient(180deg, #16110d 0%, #100b08 100%);
+      border-top: 1px solid rgba(232,217,184,0.22);
+      border-bottom: 1px solid rgba(232,217,184,0.22);
       padding: 72px 24px;
       text-align: center;
     }
     .cta-band h2 { max-width: 600px; margin: 0 auto 12px; }
-    .cta-band p { color: var(--text-muted); margin-bottom: 36px; }
+    .cta-band h2 { color: rgba(255,245,228,0.94); }
+    .cta-band p { color: rgba(255,245,228,0.8); }
+    .cta-band p { margin-bottom: 36px; }
     .cta-actions { display: flex; gap: 16px; justify-content: center; flex-wrap: wrap; }
 
     /* ─── Why Unani strip ─── */
-    .pillars { display: grid; grid-template-columns: repeat(4, 1fr); gap: 24px; margin-top: 56px; }
-    .pillar { text-align: center; padding: 32px 20px; }
+    .pillars { display: grid; grid-template-columns: repeat(4, 1fr); gap: 20px; margin-top: 40px; }
+    .pillar {
+      text-align: center;
+      padding: 24px 16px;
+      border: 1px solid rgba(232,217,184,0.2);
+      border-radius: 18px;
+      background: rgba(255,248,236,0.05);
+      backdrop-filter: blur(6px);
+      transition: transform 0.25s ease, box-shadow 0.25s ease, border-color 0.25s ease;
+    }
+    .pillar:hover {
+      transform: translateY(-5px);
+      border-color: rgba(232,217,184,0.42);
+      box-shadow: 0 16px 28px rgba(8,6,5,0.2);
+    }
     .pillar-number {
-      font-family: var(--font-display);
-      font-size: 2.4rem;
+      font-family: var(--font-body);
+      font-size: 2rem;
+      font-weight: 700;
       color: var(--gold);
       opacity: 0.6;
       display: block;
       margin-bottom: 8px;
     }
-    .pillar h4 { margin-bottom: 8px; }
-    .pillar p { font-size: 0.87rem; }
+    .pillar h4 { margin-bottom: 8px; color: rgba(255,245,228,0.92); }
+    .pillar p { font-size: 0.87rem; color: rgba(255,245,228,0.85); }
 
     @media (max-width: 900px) {
-      .hero { grid-template-columns: 1fr; min-height: auto; }
-      .hero-image { height: 360px; }
+      .hero-wrap {
+        min-height: 86vh;
+        place-items: end center;
+      }
+      .hero-core {
+        margin-top: 0;
+        width: calc(100% - 22px);
+        padding: 48px 12px 18px;
+        text-align: center;
+      }
+      .hero-heading {
+        font-size: clamp(1.55rem, 7.8vw, 2.05rem);
+        max-width: none;
+      }
+      .hero-copy {
+        font-size: 0.92rem;
+        margin-bottom: 20px;
+      }
+      .hero-action {
+        width: 100%;
+        min-width: 0;
+      }
       .services-grid { grid-template-columns: 1fr; }
       .about-teaser { grid-template-columns: 1fr; }
       .pillars { grid-template-columns: 1fr 1fr; }
+    }
+    @media (max-width: 360px) {
+      .hero-core {
+        width: calc(100% - 16px);
+        padding: 40px 10px 16px;
+      }
+      .hero-heading {
+        font-size: clamp(1.42rem, 7.2vw, 1.85rem);
+      }
+      .hero-copy { font-size: 0.86rem; margin-bottom: 16px; }
+      .pillars { grid-template-columns: 1fr; }
+      .about-teaser { padding: 28px 12px; gap: 20px; }
+      .about-image { height: 240px; }
+    }
+    .testimonial-meta {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+    }
+    .testimonial-meta img {
+      width: 30px;
+      height: 30px;
+      border-radius: 50%;
+      object-fit: cover;
+      border: 1px solid rgba(184,154,90,0.35);
     }
   </style>
   <script type="application/ld+json">
@@ -223,8 +385,9 @@
 <nav>
   <div class="nav-inner">
     <a href="index.html" class="nav-logo">
-      Kerala Unani
-      <span>Wellness Clinic</span>
+      <span class="nav-logo-wordmark">Kerala Unani</span>
+      <span class="nav-logo-line" aria-hidden="true"></span>
+      <span class="nav-logo-tag">Wellness Clinic</span>
     </a>
     <button class="nav-toggle" type="button" aria-label="Toggle navigation" aria-expanded="false"><span></span></button>
     <ul class="nav-links">
@@ -239,39 +402,16 @@
 </nav>
 
 <!-- ─── Hero ─── -->
-<section style="padding: 0; background: var(--cream);">
-  <div class="hero">
-    <div class="hero-text">
-      <span class="eyebrow">The Healing Touch of Holistic Unani</span>
-      <h1>Healing the root,<br><em>not just the symptom.</em></h1>
-      <p>Experience centuries-old Unani wisdom, refined to modern clinical standards. Personalised care for mind, body, and soul — at Bliss Gx, Gerrards Cross.</p>
-      <div class="hero-actions">
-        <a href="contact.html" class="btn btn-primary">Book Consultation</a>
-        <a href="services.html" class="btn btn-outline">Explore Services</a>
-      </div>
-      <div class="hero-trust">
-        <div class="trust-item">
-          <strong>15+</strong>
-          <span>Years of<br>Clinical Experience</span>
-        </div>
-        <div class="trust-item">
-          <strong>3</strong>
-          <span>Specialist<br>Treatment Pillars</span>
-        </div>
-        <div class="trust-item">
-          <strong>NHS</strong>
-          <span>HCPC Registered<br>Practitioner</span>
-        </div>
-      </div>
-    </div>
-
-    <div class="hero-image">
-      <img class="img-cover" src="Gallery/WhatsApp Image 2026-04-15 at 5.15.30 PM (2).jpeg" alt="Kerala Unani Wellness Clinic interior">
-      <div class="hero-badge">
-        <p>Practising at</p>
-        <strong>Bliss Gx, Gerrards Cross</strong>
-      </div>
-    </div>
+<section class="hero-wrap">
+  <div class="hero-media">
+    <img src="Gallery/WhatsApp Image 2026-04-15 at 5.15.30 PM (2).jpeg" alt="Kerala Unani Wellness Clinic interior">
+  </div>
+  <div class="hero-core">
+    <span class="hero-signature">Kerala Unani Wellness Clinic</span>
+    <span class="hero-overline">Traditional insight. Modern care.</span>
+    <h1 class="hero-heading">Restore balance through<br><em>personalised Unani care.</em></h1>
+    <p class="hero-copy">Kerala Unani Wellness Clinic brings together consultation, Hijama, and holistic counselling in one calm, high-trust setting for patients seeking more than symptom-based treatment.</p>
+    <a href="contact.html" class="hero-action">Book Consultation</a>
   </div>
 </section>
 
@@ -361,10 +501,10 @@
 </section>
 
 <!-- ─── About Teaser ─── -->
-<section style="padding: 0; background: var(--white);">
+<section style="padding: 0; background: var(--clr-bg-dark);">
   <div class="about-teaser">
     <div class="about-image">
-      <img class="img-cover" src="Gallery/WhatsApp Image 2026-04-15 at 5.15.31 PM.jpeg" alt="Hakim Anees Rahman K portrait">
+      <img class="img-cover" src="Gallery/hakim-anees-rahman.jpg" alt="Hakim Anees Rahman K portrait">
     </div>
     <div class="about-text">
       <span class="eyebrow">Meet Your Specialist</span>
@@ -392,15 +532,15 @@
   <div class="testimonial-carousel">
     <div class="testimonial-slide active">
       <p>"I came with persistent fatigue and headaches. The root-cause consultation changed how I understand my health."</p>
-      <span>Patient Feedback · Gerrards Cross</span>
+      <span class="testimonial-meta"><img src="Gallery/WhatsApp Image 2026-04-15 at 5.15.29 PM.jpeg" alt="Patient portrait">Patient Feedback · Gerrards Cross</span>
     </div>
     <div class="testimonial-slide">
       <p>"The clinic environment is peaceful, and the care feels truly personal. I finally felt listened to."</p>
-      <span>Patient Feedback · Buckinghamshire</span>
+      <span class="testimonial-meta"><img src="Gallery/WhatsApp Image 2026-04-15 at 5.15.31 PM (1).jpeg" alt="Patient portrait">Patient Feedback · Buckinghamshire</span>
     </div>
     <div class="testimonial-slide">
       <p>"Hijama was professional, hygienic, and effective for my muscle tension. Highly recommended."</p>
-      <span>Patient Feedback · Nearby Community</span>
+      <span class="testimonial-meta"><img src="Gallery/WhatsApp Image 2026-04-15 at 5.15.27 PM (1).jpeg" alt="Patient portrait">Patient Feedback · Nearby Community</span>
     </div>
     <div class="carousel-dots">
       <button class="carousel-dot active" type="button" aria-label="Show testimonial 1"></button>
@@ -455,7 +595,7 @@
         Kerala Unani
         <span>Wellness Clinic</span>
       </div>
-      <p style="font-size: 0.87rem; max-width: 260px; margin-bottom: 20px;">The healing touch of holistic Unani. Practising at Bliss Gx, Gerrards Cross, Buckinghamshire.</p>
+      <p style="font-size: 0.87rem; max-width: 260px; margin-bottom: 20px; color: rgba(250,248,243,0.86);">The healing touch of holistic Unani. Practising at Bliss Gx, Gerrards Cross, Buckinghamshire.</p>
       <p style="font-size: 0.82rem; color: var(--gold-light);">www.unani.uk</p>
     </div>
     <div class="footer-col">

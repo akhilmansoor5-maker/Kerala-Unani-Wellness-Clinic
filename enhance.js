@@ -79,6 +79,13 @@ document.addEventListener("DOMContentLoaded", () => {
   // Mobile menu toggle
   const nav = document.querySelector("nav");
   const navToggle = document.querySelector(".nav-toggle");
+  if (nav) {
+    const syncScrolledNav = () => {
+      nav.classList.toggle("nav-scrolled", window.scrollY > 60);
+    };
+    syncScrolledNav();
+    window.addEventListener("scroll", syncScrolledNav, { passive: true });
+  }
   if (nav && navToggle) {
     navToggle.addEventListener("click", () => {
       nav.classList.toggle("nav-open");
