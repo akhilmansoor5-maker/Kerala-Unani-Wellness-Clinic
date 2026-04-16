@@ -664,6 +664,68 @@ footer {
   border-bottom: 1px solid var(--border);
 }
 
+/* Inner-page heroes: headings start high on mobile, consistent rhythm */
+@media (max-width: 900px) {
+  .page-hero {
+    padding: max(10px, env(safe-area-inset-top, 0px)) max(18px, env(safe-area-inset-right, 0px)) 48px max(18px, env(safe-area-inset-left, 0px)) !important;
+    text-align: left !important;
+  }
+  .page-hero .hero-copy {
+    padding-top: 0 !important;
+    padding-bottom: 0 !important;
+  }
+  .page-hero .eyebrow {
+    margin-bottom: 8px;
+  }
+  .page-hero h1 {
+    margin-top: 0;
+    margin-bottom: 12px;
+    letter-spacing: -0.02em;
+    max-width: 100% !important;
+    text-shadow: 0 2px 24px rgba(8, 6, 5, 0.35);
+  }
+  .page-hero p {
+    margin-bottom: 16px !important;
+  }
+  .page-hero .hero-contact-points {
+    gap: 9px;
+  }
+  .page-hero .hero-contact-item {
+    line-height: 1.45;
+  }
+}
+
+@media (max-width: 480px) {
+  .page-hero {
+    padding: max(8px, env(safe-area-inset-top, 0px)) max(14px, env(safe-area-inset-right, 0px)) 40px max(14px, env(safe-area-inset-left, 0px)) !important;
+  }
+  .page-hero h1 {
+    margin-bottom: 10px;
+  }
+}
+
+@media (max-width: 360px) {
+  .page-hero {
+    padding: max(6px, env(safe-area-inset-top, 0px)) max(12px, env(safe-area-inset-right, 0px)) 34px max(12px, env(safe-area-inset-left, 0px)) !important;
+  }
+}
+
+/* Home hero: align content to top on small screens */
+@media (max-width: 900px) {
+  .hero-wrap .hero-core {
+    padding-top: max(10px, env(safe-area-inset-top, 0px)) !important;
+  }
+  .hero-wrap .hero-signature {
+    margin-bottom: 10px;
+  }
+  .hero-wrap .hero-overline {
+    margin-bottom: 10px;
+  }
+  .hero-wrap .hero-heading {
+    margin-bottom: 14px;
+  }
+}
+
 /* ─── Responsive ─── */
 @media (max-width: 768px) {
   :root { --section-pad: 58px 20px; }
