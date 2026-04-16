@@ -1,0 +1,720 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Services & Pricing — Kerala Unani Wellness Clinic</title>
+  <meta name="description" content="Unani Consultation, Hijama & Cupping, and Wellness Counselling services with full pricing at Kerala Unani Wellness Clinic, Gerrards Cross.">
+  <meta name="keywords" content="Unani consultation pricing UK, Hijama price Gerrards Cross, cupping therapy near me, wellness counselling Buckinghamshire">
+  <meta name="robots" content="index, follow">
+  <link rel="canonical" href="https://www.unani.uk/services">
+  <meta property="og:type" content="website">
+  <meta property="og:title" content="Services & Pricing | Kerala Unani Wellness Clinic">
+  <meta property="og:description" content="View complete pricing for Unani consultation, Hijama and cupping, and wellness counselling services.">
+  <meta property="og:url" content="https://www.unani.uk/services">
+  <meta property="og:site_name" content="Kerala Unani Wellness Clinic">
+  <meta property="og:locale" content="en_GB">
+  <meta name="twitter:card" content="summary">
+  <link rel="stylesheet" href="shared.css">
+  <style>
+    .page-hero {
+      background: linear-gradient(135deg, #4b1e17 0%, #6a2c20 52%, #8e4a33 100%);
+      padding: 80px 24px 72px;
+      text-align: center;
+      position: relative;
+      overflow: hidden;
+    }
+    .page-hero::before {
+      content: '';
+      position: absolute;
+      width: 360px;
+      height: 360px;
+      border-radius: 50%;
+      right: -140px;
+      top: -140px;
+      background: radial-gradient(circle, rgba(214,170,104,0.35), transparent 70%);
+      pointer-events: none;
+    }
+    .page-hero .eyebrow { color: var(--gold-light); }
+    .page-hero h1 { color: var(--white); margin-bottom: 16px; }
+    .page-hero p { color: rgba(255,255,255,0.72); max-width: 560px; margin: 0 auto; }
+
+    /* ─── Service Anchors ─── */
+    .service-block { padding: var(--section-pad); }
+    .service-block:nth-child(even) { background: var(--white); }
+    .service-block:nth-child(odd) { background: var(--cream); }
+
+    .service-inner {
+      max-width: var(--max-w);
+      margin: 0 auto;
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 72px;
+      align-items: start;
+    }
+    .service-inner.reverse { direction: rtl; }
+    .service-inner.reverse > * { direction: ltr; }
+
+    .service-image { height: 460px; border-radius: var(--radius-lg); overflow: hidden; }
+
+    .service-info h2 { margin-bottom: 16px; }
+    .service-info p { margin-bottom: 14px; }
+
+    .benefit-list { list-style: none; margin: 24px 0; display: flex; flex-direction: column; gap: 10px; }
+    .benefit-list li {
+      display: flex;
+      align-items: flex-start;
+      gap: 10px;
+      font-size: 0.9rem;
+    }
+    .benefit-list li::before {
+      content: '✦';
+      color: var(--gold);
+      font-size: 0.65rem;
+      margin-top: 5px;
+      flex-shrink: 0;
+    }
+
+    /* ─── Pricing table ─── */
+    .pricing-table {
+      margin-top: 32px;
+      border: 1px solid var(--border);
+      border-radius: var(--radius-lg);
+      overflow: hidden;
+      background: var(--white);
+    }
+    .pricing-table-header {
+      background: var(--maroon);
+      padding: 14px 20px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+    .pricing-table-header h4 {
+      font-family: var(--font-body);
+      font-size: 0.72rem;
+      font-weight: 500;
+      letter-spacing: 0.14em;
+      text-transform: uppercase;
+      color: var(--gold-light);
+    }
+    .pricing-row {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 16px 20px;
+      border-bottom: 1px solid var(--border);
+      transition: background 0.2s;
+    }
+    .pricing-row:last-child { border-bottom: none; }
+    .pricing-row:hover { background: var(--cream); }
+    .pricing-row.free .price { color: var(--maroon); font-weight: 500; }
+    .pricing-name { font-size: 0.9rem; color: var(--text-dark); }
+    .pricing-duration { font-size: 0.78rem; color: var(--text-muted); margin-top: 2px; }
+    .price {
+      font-family: var(--font-display);
+      font-size: 1.3rem;
+      color: var(--text-dark);
+    }
+
+    /* ─── Free trial CTA ─── */
+    .free-cta {
+      background: var(--cream-dark);
+      border: 1px solid var(--cream-mid);
+      border-radius: var(--radius-lg);
+      padding: 24px;
+      margin-top: 20px;
+      display: flex;
+      align-items: center;
+      gap: 20px;
+      justify-content: space-between;
+    }
+    .free-cta p { font-size: 0.9rem; margin: 0; }
+    .free-cta strong { display: block; color: var(--maroon); font-family: var(--font-display); font-size: 1.1rem; }
+
+    /* ─── Nav tabs ─── */
+    .service-nav {
+      background: var(--white);
+      border-bottom: 1px solid var(--border);
+      position: sticky;
+      top: 68px;
+      z-index: 50;
+    }
+    .service-nav-inner {
+      max-width: var(--max-w);
+      margin: 0 auto;
+      padding: 0 24px;
+      display: flex;
+      gap: 0;
+    }
+    .service-nav-link {
+      padding: 18px 28px;
+      font-size: 0.85rem;
+      font-weight: 400;
+      color: var(--text-muted);
+      border-bottom: 2px solid transparent;
+      transition: all 0.2s;
+      white-space: nowrap;
+    }
+    .service-nav-link:hover { color: var(--maroon); }
+    .service-nav-link.active { color: var(--maroon); border-bottom-color: var(--maroon); }
+
+    /* ─── FAQ ─── */
+    .faq-section {
+      background: var(--cream);
+      border-top: 1px solid var(--border);
+      border-bottom: 1px solid var(--border);
+    }
+    .faq-wrap {
+      max-width: var(--max-w);
+      margin: 0 auto;
+      padding: var(--section-pad);
+    }
+    .faq-list {
+      display: flex;
+      flex-direction: column;
+      gap: 12px;
+      margin-top: 28px;
+    }
+    .faq-item {
+      background: var(--white);
+      border: 1px solid var(--border);
+      border-radius: 12px;
+      overflow: hidden;
+    }
+    .faq-trigger {
+      width: 100%;
+      border: none;
+      background: transparent;
+      color: var(--text-dark);
+      font-family: var(--font-body);
+      font-size: 0.95rem;
+      font-weight: 500;
+      text-align: left;
+      padding: 16px 18px;
+      cursor: pointer;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      gap: 14px;
+    }
+    .faq-trigger span {
+      color: var(--maroon);
+      font-size: 1.1rem;
+      line-height: 1;
+      transition: transform 0.24s ease;
+    }
+    .faq-item.open .faq-trigger span { transform: rotate(45deg); }
+    .faq-content {
+      max-height: 0;
+      overflow: hidden;
+      opacity: 0;
+      transition: max-height 0.28s ease, opacity 0.24s ease;
+      padding: 0 18px;
+    }
+    .faq-item.open .faq-content {
+      opacity: 1;
+      padding-bottom: 16px;
+    }
+    .faq-content p {
+      margin: 0;
+      font-size: 0.9rem;
+      color: var(--text-body);
+    }
+
+    @media (max-width: 900px) {
+      .service-inner { grid-template-columns: 1fr; }
+      .service-inner.reverse { direction: ltr; }
+      .service-image { height: 300px; }
+      .service-nav-link { padding: 14px 16px; font-size: 0.8rem; }
+      .free-cta { flex-direction: column; align-items: flex-start; }
+      .faq-trigger { font-size: 0.9rem; }
+    }
+  </style>
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "CollectionPage",
+    "name": "Services and Pricing",
+    "url": "https://www.unani.uk/services",
+    "hasPart": [
+      {"@type": "MedicalProcedure", "name": "Unani Holistic Consultation"},
+      {"@type": "MedicalProcedure", "name": "Professional Hijama and Cupping"},
+      {"@type": "MedicalTherapy", "name": "Holistic Wellness Counselling"}
+    ]
+  }
+  </script>
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "FAQPage",
+    "mainEntity": [
+      {
+        "@type": "Question",
+        "name": "Do I need to prepare before my first Unani consultation?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Bring any relevant medical history, current medications, and details of your symptoms. A clear overview helps us personalise your assessment and plan."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "Is Hijama therapy safe at your clinic?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Yes. We use clinically safe hygiene protocols and single-use sterile equipment for all Hijama and cupping procedures."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "How many sessions are usually needed?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Session count varies by condition and response. Many patients start with an initial consultation and follow-up plan tailored to progress."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "Can I start with a free introductory discussion?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Yes. Each service pillar includes a short free introductory option so you can discuss concerns before booking a full session."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "Do you treat stress, anxiety, and sleep issues?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Yes. Our wellness counselling supports stress, anxiety, burnout, and sleep management through a structured holistic approach."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "Where is the clinic located?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Kerala Unani Wellness Clinic practises at Bliss Gx, Station Road, Gerrards Cross, Buckinghamshire, SL9 8EL."
+        }
+      }
+    ]
+  }
+  </script>
+</head>
+<body>
+
+<!-- ─── Navigation ─── -->
+<nav>
+  <div class="nav-inner">
+    <a href="index.html" class="nav-logo">Kerala Unani<span>Wellness Clinic</span></a>
+    <button class="nav-toggle" type="button" aria-label="Toggle navigation" aria-expanded="false"><span></span></button>
+    <ul class="nav-links">
+      <li><a href="index.html">Home</a></li>
+      <li><a href="about.html">About</a></li>
+      <li><a href="services.html" class="active">Services</a></li>
+      <li><a href="gallery.html">Gallery</a></li>
+      <li><a href="contact.html">Contact</a></li>
+      <li><a href="contact.html" class="nav-cta">Book Consultation</a></li>
+    </ul>
+  </div>
+</nav>
+
+<!-- ─── Page Hero ─── -->
+<section class="page-hero">
+  <div class="container">
+    <span class="eyebrow">Our Services</span>
+    <h1>Treatments rooted in<br>centuries of wisdom</h1>
+    <p>Every service is delivered with clinical precision, personalised care, and deep respect for the traditions that make Unani medicine uniquely effective.</p>
+  </div>
+</section>
+
+<!-- ─── Service Nav ─── -->
+<div class="service-nav">
+  <div class="service-nav-inner">
+    <a href="#consultation" class="service-nav-link active">Unani Consultation</a>
+    <a href="#hijama" class="service-nav-link">Hijama &amp; Cupping</a>
+    <a href="#counselling" class="service-nav-link">Wellness Counselling</a>
+  </div>
+</div>
+
+<!-- ─── 1. Unani Consultation ─── -->
+<section class="service-block" id="consultation">
+  <div class="service-inner">
+    <div class="service-image">
+      <img class="img-cover" src="Gallery/WhatsApp Image 2026-04-15 at 5.15.28 PM.jpeg" alt="Unani consultation room">
+    </div>
+    <div class="service-info">
+      <span class="eyebrow">Pillar One</span>
+      <h2>Unani Holistic Consultation</h2>
+      <div class="ornament" style="max-width: 200px; margin-left: 0;"><span class="ornament-icon">✦</span></div>
+      <p>Real healing starts when the root cause is treated. At Kerala Unani Wellness Clinic, we uncover the true cause of your health concerns using time-tested Unani principles — restoring balance from within.</p>
+      <p>Rather than addressing individual symptoms in isolation, our Unani consultation examines your complete picture: temperament, lifestyle, diet, emotional state, and health history.</p>
+      <ul class="benefit-list">
+        <li>Personalised temperament (Mizaj) analysis</li>
+        <li>Root-cause diagnosis, not symptom suppression</li>
+        <li>Custom herbal prescriptions prepared with care</li>
+        <li>Practical diet &amp; lifestyle plans tailored to you</li>
+        <li>Support for chronic conditions, digestive issues &amp; hormonal balance</li>
+        <li>Gentle, natural approach designed to support your body safely</li>
+      </ul>
+
+      <div class="pricing-table">
+        <div class="pricing-table-header">
+          <h4>Consultation Pricing</h4>
+        </div>
+        <div class="pricing-row free">
+          <div>
+            <div class="pricing-name">Discussion &amp; Guidance</div>
+            <div class="pricing-duration">5 minutes</div>
+          </div>
+          <div class="price">Free</div>
+        </div>
+        <div class="pricing-row">
+          <div>
+            <div class="pricing-name">Health Check-up, Vitals &amp; Examination</div>
+            <div class="pricing-duration">10 minutes</div>
+          </div>
+          <div class="price">£10</div>
+        </div>
+        <div class="pricing-row">
+          <div>
+            <div class="pricing-name">Initial Unani Consultation &amp; Examination</div>
+            <div class="pricing-duration">60 minutes</div>
+          </div>
+          <div class="price">£50</div>
+        </div>
+        <div class="pricing-row">
+          <div>
+            <div class="pricing-name">Follow-up Consultation &amp; Treatment</div>
+            <div class="pricing-duration">60 minutes</div>
+          </div>
+          <div class="price">£40</div>
+        </div>
+        <div class="pricing-row">
+          <div>
+            <div class="pricing-name">Unani Medicines</div>
+            <div class="pricing-duration">As prescribed</div>
+          </div>
+          <div class="price">As required</div>
+        </div>
+      </div>
+
+      <div class="free-cta">
+        <div>
+          <strong>Start with a free 5-minute session</strong>
+          <p>Discuss your concerns with no obligation before committing to a full consultation.</p>
+        </div>
+        <a href="contact.html" class="btn btn-primary" style="white-space: nowrap;">Book Consultation</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ─── 2. Hijama & Cupping ─── -->
+<section class="service-block" id="hijama">
+  <div class="service-inner reverse">
+    <div class="service-image">
+      <img class="img-cover" src="Gallery/WhatsApp Image 2026-04-15 at 5.15.29 PM.jpeg" alt="Professional hijama and cupping setup">
+    </div>
+    <div class="service-info">
+      <span class="eyebrow">Pillar Two</span>
+      <h2>Professional Hijama &amp; Cupping</h2>
+      <div class="ornament" style="max-width: 200px; margin-left: 0;"><span class="ornament-icon">✦</span></div>
+      <p>Experience the power of professionally delivered cupping and Hijama therapy — a deeply rejuvenating treatment trusted for centuries and refined to modern clinical standards at our clinic.</p>
+      <p>All procedures are CQC-compliant, using medical-grade, single-use sterile equipment — ensuring your complete safety and peace of mind.</p>
+      <ul class="benefit-list">
+        <li>Safe, hygienic, CQC-compliant procedures</li>
+        <li>Medical-grade, single-use sterile equipment</li>
+        <li>Improves blood circulation &amp; natural detoxification</li>
+        <li>Immediate relief from back pain, migraines &amp; muscle tension</li>
+        <li>Boosts energy levels, immunity &amp; overall vitality</li>
+        <li>Sunnah-inspired therapy with proven modern benefits</li>
+      </ul>
+
+      <div class="pricing-table">
+        <div class="pricing-table-header">
+          <h4>Hijama &amp; Cupping Pricing</h4>
+        </div>
+        <div class="pricing-row free">
+          <div>
+            <div class="pricing-name">Feel the Cupping — Trial Session</div>
+            <div class="pricing-duration">5 minutes</div>
+          </div>
+          <div class="price">Free</div>
+        </div>
+        <div class="pricing-row">
+          <div>
+            <div class="pricing-name">Unani Chiropractic Management</div>
+            <div class="pricing-duration">15 minutes</div>
+          </div>
+          <div class="price">£50</div>
+        </div>
+        <div class="pricing-row">
+          <div>
+            <div class="pricing-name">Whole Body Cupping</div>
+            <div class="pricing-duration">45 minutes</div>
+          </div>
+          <div class="price">£50</div>
+        </div>
+        <div class="pricing-row">
+          <div>
+            <div class="pricing-name">Whole Body Detox Cupping &amp; Hijama</div>
+            <div class="pricing-duration">60 minutes</div>
+          </div>
+          <div class="price">£75</div>
+        </div>
+        <div class="pricing-row">
+          <div>
+            <div class="pricing-name">Head Cupping &amp; Hijama</div>
+            <div class="pricing-duration">45 minutes</div>
+          </div>
+          <div class="price">£75</div>
+        </div>
+        <div class="pricing-row">
+          <div>
+            <div class="pricing-name">Single Joint Pain Management (Cupping)</div>
+            <div class="pricing-duration">15 minutes</div>
+          </div>
+          <div class="price">£50</div>
+        </div>
+        <div class="pricing-row">
+          <div>
+            <div class="pricing-name">Single Joint Pain Management (Hijama)</div>
+            <div class="pricing-duration">15 minutes</div>
+          </div>
+          <div class="price">£50</div>
+        </div>
+      </div>
+
+      <div class="free-cta">
+        <div>
+          <strong>Try cupping free — 5 minutes</strong>
+          <p>Experience the therapy before committing to a full session.</p>
+        </div>
+        <a href="contact.html" class="btn btn-primary" style="white-space: nowrap;">Book Consultation</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ─── 3. Wellness Counselling ─── -->
+<section class="service-block" id="counselling">
+  <div class="service-inner">
+    <div class="service-image">
+      <img class="img-cover" src="Gallery/WhatsApp Image 2026-04-15 at 5.15.29 PM (2).jpeg" alt="Holistic wellness counselling session space">
+    </div>
+    <div class="service-info">
+      <span class="eyebrow">Pillar Three</span>
+      <h2>Holistic Wellness Counselling</h2>
+      <div class="ornament" style="max-width: 200px; margin-left: 0;"><span class="ornament-icon">✦</span></div>
+      <p>Professional support for stress, anxiety, and burnout. Reconnect with your inner calm in a space designed for healing and reflection. Our holistic approach supports emotional wellbeing alongside physical health.</p>
+      <p>True wellness begins when your mind is at peace. Our counselling sessions draw from holistic wellness traditions, NLP therapy, and evidence-based approaches to mental wellbeing.</p>
+      <ul class="benefit-list">
+        <li>Confidential, compassionate one-to-one sessions</li>
+        <li>Stress, anxiety &amp; burnout recovery support</li>
+        <li>Mind-body healing techniques rooted in tradition</li>
+        <li>Sleep improvement &amp; mental clarity guidance</li>
+        <li>Holistic wellbeing &amp; emotional resilience building</li>
+        <li>A calming environment to truly unwind and reset</li>
+      </ul>
+
+      <div class="pricing-table">
+        <div class="pricing-table-header">
+          <h4>Counselling Pricing</h4>
+        </div>
+        <div class="pricing-row free">
+          <div>
+            <div class="pricing-name">Quick Assessment Session</div>
+            <div class="pricing-duration">5 minutes</div>
+          </div>
+          <div class="price">Free</div>
+        </div>
+        <div class="pricing-row">
+          <div>
+            <div class="pricing-name">Sleep Management</div>
+            <div class="pricing-duration">30 minutes</div>
+          </div>
+          <div class="price">£25</div>
+        </div>
+        <div class="pricing-row">
+          <div>
+            <div class="pricing-name">Stress &amp; Anxiety Management</div>
+            <div class="pricing-duration">60 minutes</div>
+          </div>
+          <div class="price">£50</div>
+        </div>
+        <div class="pricing-row">
+          <div>
+            <div class="pricing-name">Mental Well-being Counselling</div>
+            <div class="pricing-duration">60 minutes</div>
+          </div>
+          <div class="price">£75</div>
+        </div>
+        <div class="pricing-row">
+          <div>
+            <div class="pricing-name">Mind Reset with NLP Therapy</div>
+            <div class="pricing-duration">60 minutes</div>
+          </div>
+          <div class="price">£75</div>
+        </div>
+        <div class="pricing-row">
+          <div>
+            <div class="pricing-name">Follow-up Counselling</div>
+            <div class="pricing-duration">30 minutes</div>
+          </div>
+          <div class="price">£50</div>
+        </div>
+        <div class="pricing-row">
+          <div>
+            <div class="pricing-name">Holistic Remedies</div>
+            <div class="pricing-duration">As prescribed</div>
+          </div>
+          <div class="price">As required</div>
+        </div>
+      </div>
+
+      <div class="free-cta">
+        <div>
+          <strong>Free quick assessment — 5 minutes</strong>
+          <p>A brief, no-commitment session to understand your needs.</p>
+        </div>
+        <a href="contact.html" class="btn btn-primary" style="white-space: nowrap;">Book Consultation</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ─── Progress Journey Cards ─── -->
+<section class="lux-section">
+  <div class="container" style="text-align:center; margin-bottom: 36px;">
+    <span class="eyebrow">Treatment Journey</span>
+    <h2>How patients often progress with care</h2>
+    <p style="max-width: 680px; margin: 10px auto 0;">Every person is different, but our care model is designed to move from symptom pressure toward sustainable balance.</p>
+  </div>
+  <div class="before-after-grid">
+    <article class="ba-card">
+      <div class="ba-top">
+        <h3>Chronic Fatigue Support</h3>
+      </div>
+      <div class="ba-body ba-before">
+        <span class="ba-label">Before</span>
+        <p class="ba-text">Low energy, poor sleep, and irregular routine affecting daily focus and mood.</p>
+      </div>
+      <div class="ba-body ba-after">
+        <span class="ba-label">After Ongoing Care</span>
+        <p class="ba-text">Better sleep rhythm, improved clarity, and practical lifestyle habits with structured follow-ups.</p>
+      </div>
+    </article>
+    <article class="ba-card">
+      <div class="ba-top">
+        <h3>Pain and Tension Relief</h3>
+      </div>
+      <div class="ba-body ba-before">
+        <span class="ba-label">Before</span>
+        <p class="ba-text">Recurrent neck/back stiffness and stress-related tension reducing comfort and movement.</p>
+      </div>
+      <div class="ba-body ba-after">
+        <span class="ba-label">After Ongoing Care</span>
+        <p class="ba-text">Reduced tension episodes, better mobility, and safer body-care routines between sessions.</p>
+      </div>
+    </article>
+    <article class="ba-card">
+      <div class="ba-top">
+        <h3>Stress and Wellbeing</h3>
+      </div>
+      <div class="ba-body ba-before">
+        <span class="ba-label">Before</span>
+        <p class="ba-text">Mental overload, disrupted sleep, and limited emotional resilience under daily pressure.</p>
+      </div>
+      <div class="ba-body ba-after">
+        <span class="ba-label">After Ongoing Care</span>
+        <p class="ba-text">Calmer mindset, stronger coping methods, and improved day-to-day emotional balance.</p>
+      </div>
+    </article>
+  </div>
+</section>
+
+<!-- ─── FAQ ─── -->
+<section class="faq-section">
+  <div class="faq-wrap">
+    <div style="text-align:center; max-width: 760px; margin: 0 auto;">
+      <span class="eyebrow">Frequently Asked Questions</span>
+      <h2>Answers before your first visit</h2>
+      <p style="margin-top: 10px;">Common questions from patients in Gerrards Cross and nearby areas before starting consultation, Hijama, or counselling.</p>
+    </div>
+    <div class="faq-list">
+      <article class="faq-item">
+        <button class="faq-trigger" type="button" aria-expanded="false">Do I need to prepare before my first Unani consultation?<span>+</span></button>
+        <div class="faq-content"><p>Bring any relevant medical history, current medications, and details of your symptoms. A clear overview helps us personalise your assessment and plan.</p></div>
+      </article>
+      <article class="faq-item">
+        <button class="faq-trigger" type="button" aria-expanded="false">Is Hijama therapy safe at your clinic?<span>+</span></button>
+        <div class="faq-content"><p>Yes. We use clinically safe hygiene protocols and single-use sterile equipment for all Hijama and cupping procedures.</p></div>
+      </article>
+      <article class="faq-item">
+        <button class="faq-trigger" type="button" aria-expanded="false">How many sessions are usually needed?<span>+</span></button>
+        <div class="faq-content"><p>Session count varies by condition and response. Many patients start with an initial consultation and follow-up plan tailored to progress.</p></div>
+      </article>
+      <article class="faq-item">
+        <button class="faq-trigger" type="button" aria-expanded="false">Can I start with a free introductory discussion?<span>+</span></button>
+        <div class="faq-content"><p>Yes. Each service pillar includes a short free introductory option so you can discuss concerns before booking a full session.</p></div>
+      </article>
+      <article class="faq-item">
+        <button class="faq-trigger" type="button" aria-expanded="false">Do you treat stress, anxiety, and sleep issues?<span>+</span></button>
+        <div class="faq-content"><p>Yes. Our wellness counselling supports stress, anxiety, burnout, and sleep management through a structured holistic approach.</p></div>
+      </article>
+      <article class="faq-item">
+        <button class="faq-trigger" type="button" aria-expanded="false">Where is the clinic located?<span>+</span></button>
+        <div class="faq-content"><p>Kerala Unani Wellness Clinic practises at Bliss Gx, Station Road, Gerrards Cross, Buckinghamshire, SL9 8EL.</p></div>
+      </article>
+    </div>
+  </div>
+</section>
+
+<!-- ─── CTA ─── -->
+<section class="cta-band">
+  <span class="eyebrow">Ready to Begin?</span>
+  <h2>Every journey starts with a conversation.</h2>
+  <p>All three service pillars offer a free introductory session. Reach out and take your first step.</p>
+  <div class="cta-actions">
+    <a href="contact.html" class="btn btn-primary">Book Consultation</a>
+    <a href="https://wa.me/447570086987" class="btn btn-outline" target="_blank">WhatsApp Chat</a>
+  </div>
+</section>
+
+<!-- ─── Footer ─── -->
+<footer>
+  <div class="footer-inner">
+    <div>
+      <div class="footer-logo">Kerala Unani<span>Wellness Clinic</span></div>
+      <p style="font-size: 0.87rem; max-width: 260px; margin-bottom: 20px;">The healing touch of holistic Unani. Practising at Bliss Gx, Gerrards Cross, Buckinghamshire.</p>
+      <p style="font-size: 0.82rem; color: var(--gold-light);">www.unani.uk</p>
+    </div>
+    <div class="footer-col"><h4>Pages</h4><ul><li><a href="index.html">Home</a></li><li><a href="about.html">About</a></li><li><a href="services.html">Services</a></li><li><a href="gallery.html">Gallery</a></li><li><a href="contact.html">Contact</a></li></ul></div>
+    <div class="footer-col"><h4>Services</h4><ul><li><a href="#consultation">Unani Consultation</a></li><li><a href="#hijama">Hijama &amp; Cupping</a></li><li><a href="#counselling">Wellness Counselling</a></li></ul></div>
+    <div class="footer-col"><h4>Contact</h4><ul><li><a href="tel:07570086987">07570 086 987</a></li><li><a href="mailto:doctor@unani.uk">doctor@unani.uk</a></li><li><a href="#">Bliss Gx, Station Road, Gerrards Cross, SL9 8EL</a></li></ul></div>
+  </div>
+  <div class="footer-bottom">
+    <span>© 2025 Kerala Unani Wellness Clinic. All rights reserved.</span>
+    <span>Designed by <a href="#" style="color: var(--gold-light);">Brillowelle</a></span>
+  </div>
+</footer>
+
+<script>
+  // Highlight active service nav tab on scroll
+  const sections = ['consultation','hijama','counselling'];
+  const navLinks = document.querySelectorAll('.service-nav-link');
+  window.addEventListener('scroll', () => {
+    let current = sections[0];
+    sections.forEach(id => {
+      const el = document.getElementById(id);
+      if (el && el.getBoundingClientRect().top < 200) current = id;
+    });
+    navLinks.forEach(l => {
+      l.classList.toggle('active', l.getAttribute('href') === '#' + current);
+    });
+  });
+</script>
+<script src="enhance.js"></script>
+</body>
+</html>

@@ -1,0 +1,469 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Contact & Book — Kerala Unani Wellness Clinic</title>
+  <meta name="description" content="Book an appointment or get in touch with Kerala Unani Wellness Clinic at Bliss Gx, Gerrards Cross. Call 07570 086 987 or email doctor@unani.uk.">
+  <meta name="keywords" content="Book Unani consultation Gerrards Cross, contact Hijama clinic, wellness counselling booking UK, Unani clinic Buckinghamshire contact">
+  <meta name="robots" content="index, follow">
+  <link rel="canonical" href="https://www.unani.uk/contact">
+  <meta property="og:type" content="website">
+  <meta property="og:title" content="Contact Kerala Unani Wellness Clinic">
+  <meta property="og:description" content="Book appointments at Bliss Gx, Gerrards Cross. Call, WhatsApp, or email Kerala Unani Wellness Clinic.">
+  <meta property="og:url" content="https://www.unani.uk/contact">
+  <meta property="og:site_name" content="Kerala Unani Wellness Clinic">
+  <meta property="og:locale" content="en_GB">
+  <meta name="twitter:card" content="summary">
+  <link rel="stylesheet" href="shared.css">
+  <style>
+    .page-hero {
+      background: linear-gradient(135deg, #4b1e17 0%, #6a2c20 52%, #8e4a33 100%);
+      padding: 80px 24px 72px;
+      text-align: center;
+      position: relative;
+      overflow: hidden;
+    }
+    .page-hero::before {
+      content: '';
+      position: absolute;
+      width: 360px;
+      height: 360px;
+      border-radius: 50%;
+      right: -140px;
+      top: -140px;
+      background: radial-gradient(circle, rgba(214,170,104,0.35), transparent 70%);
+      pointer-events: none;
+    }
+    .page-hero .eyebrow { color: var(--gold-light); }
+    .page-hero h1 { color: var(--white); margin-bottom: 16px; }
+    .page-hero p { color: rgba(255,255,255,0.72); max-width: 560px; margin: 0 auto; }
+
+    /* ─── Contact layout ─── */
+    .contact-grid {
+      max-width: var(--max-w);
+      margin: 0 auto;
+      padding: var(--section-pad);
+      display: grid;
+      grid-template-columns: 1fr 480px;
+      gap: 64px;
+      align-items: start;
+    }
+
+    /* ─── Form ─── */
+    .form-card {
+      background: var(--white);
+      border: 1px solid var(--border);
+      border-radius: var(--radius-lg);
+      padding: 48px 44px;
+    }
+    .form-card h2 { margin-bottom: 8px; }
+    .form-card > p { font-size: 0.9rem; color: var(--text-muted); margin-bottom: 36px; }
+
+    .form-group { margin-bottom: 20px; }
+    .form-group label {
+      display: block;
+      font-size: 0.78rem;
+      font-weight: 500;
+      letter-spacing: 0.06em;
+      color: var(--text-dark);
+      margin-bottom: 8px;
+    }
+    .form-group input,
+    .form-group select,
+    .form-group textarea {
+      width: 100%;
+      padding: 12px 16px;
+      font-family: var(--font-body);
+      font-size: 0.9rem;
+      color: var(--text-dark);
+      background: var(--cream);
+      border: 1px solid var(--cream-mid);
+      border-radius: var(--radius);
+      outline: none;
+      transition: border-color 0.2s;
+      -webkit-appearance: none;
+    }
+    .form-group input:focus,
+    .form-group select:focus,
+    .form-group textarea:focus {
+      border-color: var(--maroon);
+      background: var(--white);
+    }
+    .form-group textarea { height: 120px; resize: vertical; }
+    .form-row { display: grid; grid-template-columns: 1fr 1fr; gap: 16px; }
+    .form-submit {
+      width: 100%;
+      padding: 16px;
+      font-family: var(--font-body);
+      font-size: 0.9rem;
+      font-weight: 500;
+      letter-spacing: 0.06em;
+      background: var(--maroon);
+      color: var(--white);
+      border: none;
+      border-radius: var(--radius);
+      cursor: pointer;
+      transition: background 0.2s;
+      margin-top: 8px;
+    }
+    .form-submit:hover { background: var(--maroon-light); }
+    .form-note { font-size: 0.78rem; color: var(--text-muted); text-align: center; margin-top: 12px; }
+
+    /* ─── Contact info sidebar ─── */
+    .contact-sidebar { display: flex; flex-direction: column; gap: 20px; }
+
+    .info-card {
+      background: var(--white);
+      border: 1px solid var(--border);
+      border-radius: var(--radius-lg);
+      padding: 28px 28px;
+    }
+    .info-card h4 {
+      font-family: var(--font-body);
+      font-size: 0.72rem;
+      font-weight: 500;
+      letter-spacing: 0.14em;
+      text-transform: uppercase;
+      color: var(--gold);
+      margin-bottom: 16px;
+    }
+    .info-item { display: flex; gap: 14px; margin-bottom: 16px; align-items: flex-start; }
+    .info-item:last-child { margin-bottom: 0; }
+    .info-icon {
+      width: 36px; height: 36px;
+      background: var(--cream-dark);
+      border-radius: 50%;
+      display: flex; align-items: center; justify-content: center;
+      flex-shrink: 0;
+    }
+    .info-icon svg { color: var(--maroon); }
+    .info-label { font-size: 0.75rem; color: var(--text-muted); margin-bottom: 2px; }
+    .info-value { font-size: 0.9rem; color: var(--text-dark); }
+    .info-value a { color: var(--maroon); transition: opacity 0.2s; }
+    .info-value a:hover { opacity: 0.7; }
+
+    /* ─── Timings ─── */
+    .timings-grid { display: flex; flex-direction: column; gap: 8px; }
+    .timing-row {
+      display: flex;
+      justify-content: space-between;
+      font-size: 0.87rem;
+      padding: 8px 0;
+      border-bottom: 1px solid var(--border);
+    }
+    .timing-row:last-child { border-bottom: none; }
+    .timing-row .day { color: var(--text-dark); }
+    .timing-row .time { color: var(--maroon); font-weight: 400; }
+    .timing-row.closed .time { color: var(--text-muted); }
+
+    /* ─── WhatsApp CTA ─── */
+    .whatsapp-card {
+      background: #25D366;
+      border-radius: var(--radius-lg);
+      padding: 24px 28px;
+      display: flex;
+      align-items: center;
+      gap: 16px;
+      text-decoration: none;
+      transition: opacity 0.2s;
+    }
+    .whatsapp-card:hover { opacity: 0.9; }
+    .whatsapp-icon { width: 44px; height: 44px; background: rgba(255,255,255,0.2); border-radius: 50%; display: flex; align-items: center; justify-content: center; flex-shrink: 0; }
+    .whatsapp-text strong { display: block; color: var(--white); font-size: 0.95rem; margin-bottom: 2px; }
+    .whatsapp-text span { font-size: 0.8rem; color: rgba(255,255,255,0.85); }
+
+    /* ─── Map ─── */
+    .map-section { background: var(--cream-dark); padding: 0; }
+    .map-placeholder {
+      height: 420px;
+      background: var(--cream-mid);
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      gap: 12px;
+      color: var(--text-muted);
+    }
+    .map-placeholder svg { opacity: 0.3; }
+    .map-placeholder h3 { font-size: 1.2rem; color: var(--text-dark); }
+    .map-placeholder p { font-size: 0.87rem; }
+    .map-placeholder a { color: var(--maroon); font-size: 0.87rem; font-weight: 500; text-decoration: underline; }
+
+    @media (max-width: 900px) {
+      .contact-grid { grid-template-columns: 1fr; }
+      .form-row { grid-template-columns: 1fr; }
+      .form-card { padding: 32px 24px; }
+    }
+  </style>
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "MedicalClinic",
+    "name": "Kerala Unani Wellness Clinic",
+    "url": "https://www.unani.uk/contact",
+    "telephone": "+447570086987",
+    "email": "doctor@unani.uk",
+    "address": {
+      "@type": "PostalAddress",
+      "streetAddress": "Bliss Gx, Station Road",
+      "addressLocality": "Gerrards Cross",
+      "postalCode": "SL9 8EL",
+      "addressRegion": "Buckinghamshire",
+      "addressCountry": "GB"
+    },
+    "contactPoint": {
+      "@type": "ContactPoint",
+      "telephone": "+447570086987",
+      "contactType": "customer service",
+      "areaServed": "GB"
+    },
+    "sameAs": [
+      "https://www.unani.uk/"
+    ]
+  }
+  </script>
+</head>
+<body>
+
+<!-- ─── Navigation ─── -->
+<nav>
+  <div class="nav-inner">
+    <a href="index.html" class="nav-logo">Kerala Unani<span>Wellness Clinic</span></a>
+    <button class="nav-toggle" type="button" aria-label="Toggle navigation" aria-expanded="false"><span></span></button>
+    <ul class="nav-links">
+      <li><a href="index.html">Home</a></li>
+      <li><a href="about.html">About</a></li>
+      <li><a href="services.html">Services</a></li>
+      <li><a href="gallery.html">Gallery</a></li>
+      <li><a href="contact.html" class="active">Contact</a></li>
+      <li><a href="contact.html" class="nav-cta">Book Consultation</a></li>
+    </ul>
+  </div>
+</nav>
+
+<!-- ─── Page Hero ─── -->
+<section class="page-hero">
+  <div class="container">
+    <span class="eyebrow">Get In Touch</span>
+    <h1>Begin your healing<br>journey today</h1>
+    <p>Whether you have questions or are ready to book — we're here. All three service pillars offer a free 5-minute introductory session.</p>
+  </div>
+</section>
+
+<!-- ─── Contact Grid ─── -->
+<section style="background: var(--cream); padding: var(--section-pad) 24px;">
+  <div style="max-width: var(--max-w); margin: 0 auto;">
+    <div class="contact-grid" style="padding: 0;">
+
+      <!-- Enquiry Form -->
+      <div class="form-card">
+        <h2>Send an Enquiry</h2>
+        <p>Fill in the form below and we'll respond within one working day.</p>
+
+        <div class="form-row">
+          <div class="form-group">
+            <label for="first-name">First Name</label>
+            <input type="text" id="first-name" name="first_name" placeholder="Your first name">
+          </div>
+          <div class="form-group">
+            <label for="last-name">Last Name</label>
+            <input type="text" id="last-name" name="last_name" placeholder="Your last name">
+          </div>
+        </div>
+
+        <div class="form-group">
+          <label for="email">Email Address</label>
+          <input type="email" id="email" name="email" placeholder="your@email.com">
+        </div>
+
+        <div class="form-group">
+          <label for="phone">Phone Number</label>
+          <input type="tel" id="phone" name="phone" placeholder="+44 ...">
+        </div>
+
+        <div class="form-group">
+          <label for="service">Service of Interest</label>
+          <select id="service" name="service">
+            <option value="" disabled selected>Select a service</option>
+            <option value="consultation">Unani Holistic Consultation</option>
+            <option value="hijama">Hijama &amp; Cupping Therapy</option>
+            <option value="counselling">Wellness Counselling</option>
+            <option value="general">General Enquiry</option>
+          </select>
+        </div>
+
+        <div class="form-group">
+          <label for="message">Your Message</label>
+          <textarea id="message" name="message" placeholder="Tell us a little about what you're looking for, or any questions you have..."></textarea>
+        </div>
+
+        <button class="form-submit" type="button" onclick="handleSubmit()">Send Enquiry</button>
+        <p class="form-note">We respect your privacy. Your details will never be shared with third parties.</p>
+      </div>
+
+      <!-- Sidebar -->
+      <div class="contact-sidebar">
+
+        <!-- WhatsApp -->
+        <a href="https://wa.me/447570086987" class="whatsapp-card" target="_blank">
+          <div class="whatsapp-icon">
+            <svg width="24" height="24" viewBox="0 0 24 24" fill="white">
+              <path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413Z"/>
+            </svg>
+          </div>
+          <div class="whatsapp-text">
+            <strong>Chat on WhatsApp</strong>
+            <span>Quick questions? Message us directly</span>
+          </div>
+        </a>
+
+        <!-- Contact Details -->
+        <div class="info-card">
+          <h4>Contact Details</h4>
+          <div class="info-item">
+            <div class="info-icon">
+              <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07A19.5 19.5 0 0 1 4.69 13a19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 3.59 2h3a2 2 0 0 1 2 1.72c.127.96.361 1.903.7 2.81a2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0 1 22 16.92z"/></svg>
+            </div>
+            <div>
+              <div class="info-label">Phone</div>
+              <div class="info-value"><a href="tel:07570086987">07570 086 987</a></div>
+            </div>
+          </div>
+          <div class="info-item">
+            <div class="info-icon">
+              <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg>
+            </div>
+            <div>
+              <div class="info-label">Email</div>
+              <div class="info-value"><a href="mailto:doctor@unani.uk">doctor@unani.uk</a></div>
+            </div>
+          </div>
+          <div class="info-item">
+            <div class="info-icon">
+              <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg>
+            </div>
+            <div>
+              <div class="info-label">Address</div>
+              <div class="info-value">Bliss Gx, Station Road<br>Gerrards Cross, SL9 8EL<br>Buckinghamshire, UK</div>
+            </div>
+          </div>
+          <div class="info-item">
+            <div class="info-icon">
+              <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg>
+            </div>
+            <div>
+              <div class="info-label">Website</div>
+              <div class="info-value"><a href="https://www.unani.uk" target="_blank">www.unani.uk</a></div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Clinic Timings -->
+        <div class="info-card">
+          <h4>Clinic Timings</h4>
+          <div class="timings-grid">
+            <div class="timing-row">
+              <span class="day">Monday</span>
+              <span class="time">9:00 AM – 6:00 PM</span>
+            </div>
+            <div class="timing-row">
+              <span class="day">Tuesday</span>
+              <span class="time">9:00 AM – 6:00 PM</span>
+            </div>
+            <div class="timing-row">
+              <span class="day">Wednesday</span>
+              <span class="time">9:00 AM – 6:00 PM</span>
+            </div>
+            <div class="timing-row">
+              <span class="day">Thursday</span>
+              <span class="time">9:00 AM – 6:00 PM</span>
+            </div>
+            <div class="timing-row">
+              <span class="day">Friday</span>
+              <span class="time">9:00 AM – 6:00 PM</span>
+            </div>
+            <div class="timing-row">
+              <span class="day">Saturday</span>
+              <span class="time">10:00 AM – 4:00 PM</span>
+            </div>
+            <div class="timing-row closed">
+              <span class="day">Sunday</span>
+              <span class="time">Closed</span>
+            </div>
+          </div>
+          <p style="font-size:0.78rem; color:var(--text-muted); margin-top:16px;">⚠ Please confirm timings when booking — hours may vary on public holidays.</p>
+        </div>
+
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ─── Map ─── -->
+<section class="map-section">
+  <!-- Replace this div with a Google Maps embed iframe when ready -->
+  <!-- Example:
+  <iframe
+    src="https://www.google.com/maps/embed?pb=!1m18!...YOUR_EMBED_URL..."
+    width="100%" height="420" style="border:0;" allowfullscreen loading="lazy">
+  </iframe>
+  -->
+  <div class="map-placeholder">
+    <svg width="48" height="48" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1">
+      <path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/>
+    </svg>
+    <h3>Bliss Gx, Gerrards Cross</h3>
+    <p>Station Road, Gerrards Cross, SL9 8EL, Buckinghamshire</p>
+    <a href="https://maps.google.com/?q=Bliss+Gx+Station+Road+Gerrards+Cross+SL9+8EL" target="_blank">Open in Google Maps →</a>
+    <p style="font-size: 0.75rem; margin-top: 8px; opacity: 0.6;">Replace this block with a Google Maps embed iframe in WordPress/Elementor</p>
+  </div>
+</section>
+
+<!-- ─── Free session reminder ─── -->
+<section style="background: var(--cream-dark); border-top: 1px solid var(--cream-mid); border-bottom: 1px solid var(--cream-mid); padding: 56px 24px; text-align: center;">
+  <div class="container" style="max-width: 640px;">
+    <span class="eyebrow">No Commitment Needed</span>
+    <h2>Every service starts free</h2>
+    <p>All three of our treatment pillars offer a free 5-minute introductory session. Get in touch, share your concern, and let's talk about how we can help.</p>
+    <div style="display: flex; gap: 16px; justify-content: center; margin-top: 32px; flex-wrap: wrap;">
+      <a href="https://wa.me/447570086987" class="btn btn-primary" target="_blank">WhatsApp Chat</a>
+      <a href="tel:07570086987" class="btn btn-outline">Call Us Directly</a>
+    </div>
+  </div>
+</section>
+
+<!-- ─── Footer ─── -->
+<footer>
+  <div class="footer-inner">
+    <div>
+      <div class="footer-logo">Kerala Unani<span>Wellness Clinic</span></div>
+      <p style="font-size: 0.87rem; max-width: 260px; margin-bottom: 20px;">The healing touch of holistic Unani. Practising at Bliss Gx, Gerrards Cross, Buckinghamshire.</p>
+      <p style="font-size: 0.82rem; color: var(--gold-light);">www.unani.uk</p>
+    </div>
+    <div class="footer-col"><h4>Pages</h4><ul><li><a href="index.html">Home</a></li><li><a href="about.html">About</a></li><li><a href="services.html">Services</a></li><li><a href="gallery.html">Gallery</a></li><li><a href="contact.html">Contact</a></li></ul></div>
+    <div class="footer-col"><h4>Services</h4><ul><li><a href="services.html#consultation">Unani Consultation</a></li><li><a href="services.html#hijama">Hijama &amp; Cupping</a></li><li><a href="services.html#counselling">Wellness Counselling</a></li></ul></div>
+    <div class="footer-col"><h4>Contact</h4><ul><li><a href="tel:07570086987">07570 086 987</a></li><li><a href="mailto:doctor@unani.uk">doctor@unani.uk</a></li><li><a href="#">Bliss Gx, Station Road, Gerrards Cross, SL9 8EL</a></li></ul></div>
+  </div>
+  <div class="footer-bottom">
+    <span>© 2025 Kerala Unani Wellness Clinic. All rights reserved.</span>
+    <span>Designed by <a href="#" style="color: var(--gold-light);">Brillowelle</a></span>
+  </div>
+</footer>
+
+<script>
+function handleSubmit() {
+  const name = document.getElementById('first-name').value;
+  const email = document.getElementById('email').value;
+  const service = document.getElementById('service').value;
+  if (!name || !email) {
+    alert('Please fill in your name and email address.');
+    return;
+  }
+  // Replace this with your actual form submission logic (Elementor form / WPForms / EmailJS etc.)
+  alert('Thank you for your enquiry! We will be in touch within one working day.');
+}
+</script>
+<script src="enhance.js"></script>
+</body>
+</html>

@@ -1,0 +1,344 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>About — Kerala Unani Wellness Clinic</title>
+  <meta name="description" content="Meet Hakim Anees Rahman K — Unani Wellness Consultant, HCPC Paramedic, and founder of Kerala Unani Wellness Clinic in Gerrards Cross, UK.">
+  <meta name="keywords" content="About Kerala Unani Wellness, Hakim Anees Rahman, Unani doctor Gerrards Cross, holistic clinic Buckinghamshire">
+  <meta name="robots" content="index, follow">
+  <link rel="canonical" href="https://www.unani.uk/about">
+  <meta property="og:type" content="article">
+  <meta property="og:title" content="About Kerala Unani Wellness Clinic">
+  <meta property="og:description" content="Learn about Hakim Anees Rahman K and the clinic's philosophy of holistic Unani healing in Gerrards Cross.">
+  <meta property="og:url" content="https://www.unani.uk/about">
+  <meta property="og:site_name" content="Kerala Unani Wellness Clinic">
+  <meta property="og:locale" content="en_GB">
+  <meta name="twitter:card" content="summary">
+  <link rel="stylesheet" href="shared.css">
+  <style>
+    /* ─── Page Hero ─── */
+    .page-hero {
+      background: linear-gradient(135deg, #4b1e17 0%, #6a2c20 52%, #8e4a33 100%);
+      padding: 80px 24px 72px;
+      text-align: center;
+      position: relative;
+      overflow: hidden;
+    }
+    .page-hero::before {
+      content: '';
+      position: absolute;
+      width: 360px;
+      height: 360px;
+      border-radius: 50%;
+      right: -140px;
+      top: -140px;
+      background: radial-gradient(circle, rgba(214,170,104,0.35), transparent 70%);
+      pointer-events: none;
+    }
+    .page-hero .eyebrow { color: var(--gold-light); }
+    .page-hero h1 { color: var(--white); margin-bottom: 16px; }
+    .page-hero p { color: rgba(255,255,255,0.72); max-width: 560px; margin: 0 auto; }
+
+    /* ─── Story ─── */
+    .story-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 80px;
+      align-items: center;
+      max-width: var(--max-w);
+      margin: 0 auto;
+      padding: var(--section-pad);
+    }
+    .story-image { height: 500px; border-radius: var(--radius-lg); overflow: hidden; }
+    .story-text h2 { margin-bottom: 20px; }
+    .story-text p { margin-bottom: 16px; }
+
+    /* ─── Doctor Profile ─── */
+    .doctor-section { background: var(--white); }
+    .doctor-inner { max-width: var(--max-w); margin: 0 auto; padding: var(--section-pad); }
+    .doctor-grid {
+      display: grid;
+      grid-template-columns: 380px 1fr;
+      gap: 64px;
+      align-items: start;
+    }
+    .doctor-image { height: 520px; border-radius: var(--radius-lg); overflow: hidden; position: relative; }
+    .doctor-badge {
+      position: absolute;
+      bottom: 24px;
+      left: 50%;
+      transform: translateX(-50%);
+      background: var(--white);
+      border: 1px solid var(--border);
+      border-radius: var(--radius-lg);
+      padding: 14px 20px;
+      white-space: nowrap;
+      text-align: center;
+    }
+    .doctor-badge strong { display: block; font-family: var(--font-display); font-size: 1rem; color: var(--text-dark); }
+    .doctor-badge small { font-size: 0.75rem; color: var(--text-muted); }
+
+    .doctor-bio h2 { margin-bottom: 6px; }
+    .doctor-bio .title { font-size: 0.85rem; color: var(--gold); font-weight: 500; letter-spacing: 0.06em; margin-bottom: 24px; display: block; }
+    .doctor-bio p { margin-bottom: 16px; }
+
+    .expertise-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 12px;
+      margin: 28px 0;
+    }
+    .expertise-item {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      font-size: 0.87rem;
+      padding: 12px 14px;
+      background: var(--cream);
+      border-radius: var(--radius);
+    }
+    .expertise-item::before {
+      content: '✓';
+      color: var(--maroon);
+      font-weight: 500;
+      flex-shrink: 0;
+    }
+
+    .qualifications {
+      margin: 28px 0;
+      padding: 24px;
+      background: var(--cream);
+      border-left: 3px solid var(--gold);
+      border-radius: 0 var(--radius) var(--radius) 0;
+    }
+    .qualifications h4 { font-family: var(--font-body); font-size: 0.72rem; font-weight: 500; letter-spacing: 0.14em; text-transform: uppercase; color: var(--gold); margin-bottom: 14px; }
+    .qual-list { list-style: none; display: flex; flex-direction: column; gap: 8px; }
+    .qual-list li { font-size: 0.87rem; padding-left: 16px; position: relative; }
+    .qual-list li::before { content: '—'; position: absolute; left: 0; color: var(--text-muted); }
+
+    .philosophy-block {
+      background: var(--maroon);
+      border-radius: var(--radius-lg);
+      padding: 28px 32px;
+      margin-top: 28px;
+    }
+    .philosophy-block blockquote {
+      font-family: var(--font-display);
+      font-size: 1.2rem;
+      font-style: normal;
+      color: var(--white);
+      line-height: 1.6;
+    }
+    .philosophy-block cite { display: block; margin-top: 12px; font-size: 0.78rem; color: var(--gold-light); font-style: normal; letter-spacing: 0.08em; }
+
+    /* ─── Approach ─── */
+    .approach-section { background: var(--cream-dark); }
+    .approach-inner { max-width: var(--max-w); margin: 0 auto; padding: var(--section-pad); }
+    .approach-intro { text-align: center; max-width: 580px; margin: 0 auto 56px; }
+    .approach-cards { display: grid; grid-template-columns: repeat(3, 1fr); gap: 24px; }
+    .approach-card {
+      background: var(--white);
+      border-radius: var(--radius-lg);
+      border: 1px solid var(--border);
+      padding: 36px 28px;
+    }
+    .approach-num {
+      font-family: var(--font-display);
+      font-size: 2.4rem;
+      color: var(--gold);
+      opacity: 0.5;
+      display: block;
+      margin-bottom: 12px;
+    }
+    .approach-card h3 { margin-bottom: 12px; }
+    .approach-card p { font-size: 0.9rem; }
+
+    @media (max-width: 900px) {
+      .story-grid { grid-template-columns: 1fr; }
+      .doctor-grid { grid-template-columns: 1fr; }
+      .approach-cards { grid-template-columns: 1fr; }
+      .expertise-grid { grid-template-columns: 1fr; }
+    }
+  </style>
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "AboutPage",
+    "name": "About Kerala Unani Wellness Clinic",
+    "url": "https://www.unani.uk/about",
+    "about": {
+      "@type": "Person",
+      "name": "Hakim Anees Rahman K",
+      "jobTitle": "Unani Wellness Consultant",
+      "knowsAbout": ["Unani Medicine", "Hijama Therapy", "Wellness Counselling"]
+    }
+  }
+  </script>
+</head>
+<body>
+
+<!-- ─── Navigation ─── -->
+<nav>
+  <div class="nav-inner">
+    <a href="index.html" class="nav-logo">
+      Kerala Unani
+      <span>Wellness Clinic</span>
+    </a>
+    <button class="nav-toggle" type="button" aria-label="Toggle navigation" aria-expanded="false"><span></span></button>
+    <ul class="nav-links">
+      <li><a href="index.html">Home</a></li>
+      <li><a href="about.html" class="active">About</a></li>
+      <li><a href="services.html">Services</a></li>
+      <li><a href="gallery.html">Gallery</a></li>
+      <li><a href="contact.html">Contact</a></li>
+      <li><a href="contact.html" class="nav-cta">Book Consultation</a></li>
+    </ul>
+  </div>
+</nav>
+
+<!-- ─── Page Hero ─── -->
+<section class="page-hero">
+  <div class="container">
+    <span class="eyebrow">Our Story</span>
+    <h1>Rooted in tradition,<br>refined by modern care</h1>
+    <p>Kerala Unani Wellness Clinic brings the healing wisdom of Unani medicine to the United Kingdom — where ancient knowledge meets modern clinical standards.</p>
+  </div>
+</section>
+
+<!-- ─── Clinic Story ─── -->
+<section style="padding: 0; background: var(--cream);">
+  <div class="story-grid">
+    <div class="story-image">
+      <img class="img-cover" src="Gallery/WhatsApp Image 2026-04-15 at 5.15.27 PM (1).jpeg" alt="Kerala Unani clinic exterior at Bliss Gx">
+    </div>
+    <div class="story-text">
+      <span class="eyebrow">About Kerala Unani Wellness Clinic</span>
+      <h2>Where Kerala's healing tradition meets the UK</h2>
+      <div class="ornament" style="max-width: 200px; margin-left: 0;"><span class="ornament-icon">✦</span></div>
+      <p>Kerala Unani Wellness Clinic was founded with a singular purpose: to bring the authentic, evidence-informed wisdom of Unani medicine to patients in the United Kingdom who are seeking alternatives to symptom-only approaches.</p>
+      <p>Practising from Bliss Gx in Gerrards Cross, Buckinghamshire, the clinic provides a serene, professional environment where ancient healing traditions are delivered with modern clinical rigour.</p>
+      <p>Our name reflects our roots. Kerala — the land known for its centuries-long tradition of holistic medicine. Unani — the ancient system of healing originating in Greece and refined through centuries of Arabic and South Asian medical scholarship.</p>
+      <p>Every consultation, every treatment, every interaction is guided by one belief: that true healing begins when we understand the whole person — not just the presenting complaint.</p>
+    </div>
+  </div>
+</section>
+
+<!-- ─── Doctor Profile ─── -->
+<section class="doctor-section">
+  <div class="doctor-inner">
+    <div style="text-align: center; margin-bottom: 56px;">
+      <span class="eyebrow">Our Specialist</span>
+      <h2>Meet Hakim Anees Rahman K</h2>
+      <div class="ornament" style="max-width: 240px; margin: 0 auto;"><span class="ornament-icon">✦</span></div>
+    </div>
+    <div class="doctor-grid">
+      <div>
+        <div class="doctor-image">
+          <img class="img-cover" src="Gallery/WhatsApp Image 2026-04-15 at 5.15.31 PM.jpeg" alt="Hakim Anees Rahman K portrait">
+          <div class="doctor-badge">
+            <strong>Hakim Anees Rahman K</strong>
+            <small>Unani Wellness Consultant</small>
+          </div>
+        </div>
+      </div>
+      <div class="doctor-bio">
+        <h2>Hakim Anees Rahman K</h2>
+        <span class="title">Unani Wellness Consultant · HCPC Paramedic Practitioner (NHS, UK)</span>
+
+        <p>With over 15 years of clinical experience spanning traditional medicine and modern patient care, Hakim Anees Rahman brings a truly rare combination of deep Unani scholarship, professional Hijama expertise, and evidence-based holistic counselling to his patients in the UK.</p>
+
+        <p>Having trained and practised across India and the United Kingdom — including within structured NHS healthcare environments — Hakim Anees uniquely bridges the worlds of ancient wisdom and contemporary clinical standards. This ensures that every treatment offered at the clinic is both deeply rooted in tradition and rigorously safe.</p>
+
+        <p>His approach is never transactional. Each patient receives a thorough temperament assessment and lifestyle evaluation before any treatment begins, resulting in a care plan that is genuinely personal.</p>
+
+        <div class="qualifications">
+          <h4>Qualifications</h4>
+          <ul class="qual-list">
+            <li>BUMS (Bachelor of Unani Medicine &amp; Surgery) — GCMC, India</li>
+            <li>MSc Psychology</li>
+            <li>Master of Business Administration (MBA)</li>
+            <li>HCPC Paramedic Practitioner — NHS, United Kingdom</li>
+          </ul>
+        </div>
+
+        <h4 style="font-family: var(--font-body); font-size: 0.72rem; font-weight: 500; letter-spacing: 0.14em; text-transform: uppercase; color: var(--gold); margin-bottom: 14px;">Areas of Expertise</h4>
+        <div class="expertise-grid">
+          <div class="expertise-item">Chronic conditions &amp; lifestyle disorders</div>
+          <div class="expertise-item">Digestive health &amp; metabolic imbalance</div>
+          <div class="expertise-item">Hormonal &amp; fatigue-related issues</div>
+          <div class="expertise-item">Musculoskeletal pain &amp; migraines</div>
+          <div class="expertise-item">Stress, anxiety &amp; burnout recovery</div>
+          <div class="expertise-item">Professional Hijama &amp; Cupping therapy</div>
+        </div>
+
+        <div class="philosophy-block">
+          <blockquote>"True healing begins when the root cause is understood — not just the symptoms."</blockquote>
+          <cite>— Hakim Anees Rahman K</cite>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ─── Treatment Approach ─── -->
+<section class="approach-section">
+  <div class="approach-inner">
+    <div class="approach-intro">
+      <span class="eyebrow">Our Approach</span>
+      <h2>How we care for you</h2>
+      <div class="ornament"><span class="ornament-icon">✦</span></div>
+      <p>Every patient's journey at Kerala Unani Wellness Clinic follows a considered, respectful process designed to restore balance and build long-term wellbeing.</p>
+    </div>
+    <div class="approach-cards">
+      <div class="approach-card">
+        <span class="approach-num">01</span>
+        <h3>Listen &amp; Understand</h3>
+        <p>We begin with a thorough conversation — your health history, lifestyle, concerns, and goals. No rushing, no assumptions.</p>
+      </div>
+      <div class="approach-card">
+        <span class="approach-num">02</span>
+        <h3>Assess &amp; Diagnose</h3>
+        <p>Using Unani temperament analysis (Mizaj assessment) alongside modern clinical evaluation, we identify the root cause of your concern.</p>
+      </div>
+      <div class="approach-card">
+        <span class="approach-num">03</span>
+        <h3>Treat &amp; Support</h3>
+        <p>A personalised plan is created — combining herbal remedies, physical therapies, lifestyle guidance, and ongoing support.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ─── CTA ─── -->
+<section class="cta-band">
+  <span class="eyebrow">Begin Your Journey</span>
+  <h2>Ready to meet your specialist?</h2>
+  <p>Book your initial consultation or start with a free 5-minute discussion session.</p>
+  <div class="cta-actions">
+    <a href="contact.html" class="btn btn-primary">Book Consultation</a>
+    <a href="services.html" class="btn btn-outline">Explore Services</a>
+  </div>
+</section>
+
+<!-- ─── Footer ─── -->
+<footer>
+  <div class="footer-inner">
+    <div>
+      <div class="footer-logo">Kerala Unani<span>Wellness Clinic</span></div>
+      <p style="font-size: 0.87rem; max-width: 260px; margin-bottom: 20px;">The healing touch of holistic Unani. Practising at Bliss Gx, Gerrards Cross, Buckinghamshire.</p>
+      <p style="font-size: 0.82rem; color: var(--gold-light);">www.unani.uk</p>
+    </div>
+    <div class="footer-col"><h4>Pages</h4><ul><li><a href="index.html">Home</a></li><li><a href="about.html">About</a></li><li><a href="services.html">Services</a></li><li><a href="gallery.html">Gallery</a></li><li><a href="contact.html">Contact</a></li></ul></div>
+    <div class="footer-col"><h4>Services</h4><ul><li><a href="services.html#consultation">Unani Consultation</a></li><li><a href="services.html#hijama">Hijama &amp; Cupping</a></li><li><a href="services.html#counselling">Wellness Counselling</a></li></ul></div>
+    <div class="footer-col"><h4>Contact</h4><ul><li><a href="tel:07570086987">07570 086 987</a></li><li><a href="mailto:doctor@unani.uk">doctor@unani.uk</a></li><li><a href="#">Bliss Gx, Station Road, Gerrards Cross, SL9 8EL</a></li></ul></div>
+  </div>
+  <div class="footer-bottom">
+    <span>© 2025 Kerala Unani Wellness Clinic. All rights reserved.</span>
+    <span>Designed by <a href="#" style="color: var(--gold-light);">Brillowelle</a></span>
+  </div>
+</footer>
+
+<script src="enhance.js"></script>
+</body>
+</html>
