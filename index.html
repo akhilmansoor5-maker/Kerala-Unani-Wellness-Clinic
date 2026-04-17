@@ -23,12 +23,12 @@
     /* ─── Hero ─── */
     .hero-wrap {
       position: relative;
-      min-height: 100vh;
-      padding: 0;
+      min-height: 100svh;
+      padding: 0 24px;
       border-bottom: 1px solid var(--border);
       overflow: hidden;
       display: grid;
-      place-items: start center;
+      place-items: center;
       isolation: isolate;
     }
     .hero-media {
@@ -48,51 +48,31 @@
       position: absolute;
       inset: 0;
       background:
-        radial-gradient(circle at 50% 25%, rgba(197,160,89,0.2), transparent 34%),
-        linear-gradient(180deg, rgba(14,10,7,0.28) 0%, rgba(14,10,7,0.72) 56%, rgba(14,10,7,0.9) 100%);
+        linear-gradient(180deg, rgba(10,8,7,0.72) 0%, rgba(10,8,7,0.78) 46%, rgba(10,8,7,0.9) 100%);
     }
     .hero-core {
       position: relative;
       z-index: 2;
-      width: min(1100px, calc(100% - 48px));
-      text-align: left;
-      padding: 62px 16px 20px 44px;
-      animation: heroFadeIn 820ms cubic-bezier(0.22, 1, 0.36, 1) both;
-    }
-    .hero-signature {
-      display: inline-flex;
-      align-items: center;
-      gap: 10px;
-      color: rgba(255,246,230,0.84);
-      font-size: 0.74rem;
-      font-weight: 600;
-      letter-spacing: 0.16em;
-      text-transform: uppercase;
-      margin-bottom: 18px;
-    }
-    .hero-signature::before,
-    .hero-signature::after {
-      content: "";
-      width: 28px;
-      height: 1px;
-      background: rgba(232,217,184,0.62);
+      width: min(860px, 100%);
+      text-align: center;
+      animation: heroFadeIn 900ms cubic-bezier(0.22, 1, 0.36, 1) both;
     }
     .hero-overline {
       display: block;
-      color: rgba(255,248,235,0.84);
-      font-size: 0.78rem;
-      letter-spacing: 0.16em;
+      color: rgba(255,248,235,0.88);
+      font-size: 0.76rem;
+      letter-spacing: 0.14em;
       text-transform: uppercase;
-      margin-bottom: 16px;
+      margin-bottom: 14px;
       font-weight: 600;
     }
     .hero-heading {
-      margin: 0 0 18px;
-      max-width: 38ch;
+      margin: 0 auto 18px;
+      max-width: 16ch;
       color: #fff8ec;
-      font-size: clamp(1.9rem, 3.35vw, 3.05rem);
-      line-height: 1.02;
-      letter-spacing: 0.015em;
+      font-size: clamp(2.05rem, 4.1vw, 3.35rem);
+      line-height: 1.06;
+      letter-spacing: -0.01em;
       text-shadow: 0 12px 34px rgba(8,6,5,0.34);
     }
     .hero-heading em {
@@ -101,19 +81,19 @@
       font-weight: 700;
     }
     .hero-copy {
-      max-width: 58ch;
-      margin: 0 0 26px;
+      max-width: 48ch;
+      margin: 0 auto 28px;
       color: rgba(255,245,230,0.9);
-      font-size: clamp(0.92rem, 1.35vw, 1.02rem);
-      line-height: 1.7;
+      font-size: clamp(0.94rem, 1.22vw, 1.02rem);
+      line-height: 1.82;
     }
     .hero-action {
       display: inline-flex;
       align-items: center;
       justify-content: center;
-      min-width: 220px;
-      padding: 15px 28px;
-      border-radius: 2px;
+      min-width: 230px;
+      padding: 14px 24px;
+      border-radius: 4px;
       background: linear-gradient(180deg, var(--gold-light) 0%, var(--gold) 100%);
       border: 1px solid rgba(232,217,184,0.48);
       color: #2a1b12;
@@ -142,20 +122,31 @@
       to { transform: scale(1.02) translateY(-10px); }
     }
 
-    /* ─── Services strip ─── */
+    /* ─── Rebuilt Service Section ─── */
     .section-white {
       background: var(--clr-bg);
       color: var(--text-body);
     }
-    .services-intro { text-align: center; max-width: 660px; margin: 0 auto 46px; }
-    .services-intro h2 { color: var(--text-dark); }
-    .services-intro p { color: var(--text-body); }
-    .services-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 24px; }
+    .services-shell {
+      max-width: var(--max-w);
+      margin: 0 auto;
+      display: grid;
+      gap: 44px;
+    }
+    .services-head {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 32px;
+      align-items: end;
+    }
+    .services-head h2 { color: var(--text-dark); max-width: 14ch; margin: 0; }
+    .services-head p { color: var(--text-body); max-width: 52ch; margin: 0; line-height: 1.84; }
+    .services-grid { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 20px; }
     .service-card {
       background: var(--clr-surface);
       border: 1px solid var(--border);
-      border-radius: var(--radius-lg);
-      padding: 30px 24px;
+      border-radius: 18px;
+      padding: 28px 22px;
       transition: transform 0.25s, box-shadow 0.25s;
       position: relative;
       overflow: hidden;
@@ -170,7 +161,7 @@
       transform-origin: left;
       transition: transform 0.3s;
     }
-    .service-card:hover { transform: translateY(-4px); box-shadow: 0 12px 40px rgba(107,39,55,0.08); }
+    .service-card:hover { transform: translateY(-4px); box-shadow: 0 16px 40px rgba(32,26,20,0.12); }
     .service-card:hover::before { transform: scaleX(1); }
     .service-icon {
       width: 52px; height: 52px;
@@ -271,43 +262,35 @@
     .pillar p { font-size: 0.87rem; color: rgba(255,245,228,0.85); }
 
     @media (max-width: 900px) {
-      .hero-wrap {
-        min-height: 86svh;
-        place-items: start center;
-        padding-bottom: env(safe-area-inset-bottom, 0px);
-      }
+      .hero-wrap { min-height: 100svh; padding: 0 16px; }
       .hero-core {
-        margin-top: 0;
-        width: calc(100% - 22px);
-        padding: 12px 14px calc(48px + env(safe-area-inset-bottom, 10px));
-        text-align: center;
+        width: min(560px, 100%);
       }
       .hero-heading {
-        font-size: clamp(1.46rem, 6.8vw, 1.9rem);
-        max-width: none;
-        line-height: 1.06;
+        font-size: clamp(1.82rem, 8.2vw, 2.35rem);
+        max-width: 14ch;
       }
       .hero-copy {
-        font-size: 0.92rem;
-        margin-bottom: 20px;
+        font-size: 0.9rem;
+        margin-bottom: 22px;
       }
       .hero-action {
         width: 100%;
         min-width: 0;
         max-width: 100%;
       }
+      .services-head { grid-template-columns: 1fr; gap: 12px; }
       .services-grid { grid-template-columns: 1fr; }
       .about-teaser { grid-template-columns: 1fr; }
       .pillars { grid-template-columns: 1fr 1fr; }
     }
     @media (max-width: 360px) {
-      .hero-wrap { min-height: 82svh; }
+      .hero-wrap { min-height: 100svh; }
       .hero-core {
-        width: calc(100% - 16px);
-        padding: 10px 10px calc(36px + env(safe-area-inset-bottom, 8px));
+        width: min(520px, 100%);
       }
       .hero-heading {
-        font-size: clamp(1.3rem, 6.1vw, 1.58rem);
+        font-size: clamp(1.62rem, 8.4vw, 2.02rem);
       }
       .hero-copy { font-size: 0.86rem; margin-bottom: 16px; }
       .pillars { grid-template-columns: 1fr; }
@@ -411,7 +394,6 @@
     <img src="Gallery/WhatsApp Image 2026-04-15 at 5.15.30 PM (2).jpeg" alt="Kerala Unani Wellness Clinic interior">
   </div>
   <div class="hero-core">
-    <span class="hero-signature">Kerala Unani Wellness Clinic</span>
     <span class="hero-overline">Traditional insight. Modern care.</span>
     <h1 class="hero-heading">Restore balance through<br><em>personalised Unani care.</em></h1>
     <p class="hero-copy">Kerala Unani Wellness Clinic brings together consultation, Hijama, and holistic counselling in one calm, high-trust setting for patients seeking more than symptom-based treatment.</p>
@@ -419,16 +401,16 @@
   </div>
 </section>
 
-<!-- ─── Services ─── -->
-<section class="section-white">
-  <div class="container">
-    <div class="services-intro">
-      <span class="eyebrow">What We Offer</span>
-      <h2>Three pillars of holistic care</h2>
-      <div class="ornament"><span class="ornament-icon">✦</span></div>
-      <p>Each treatment is grounded in authentic Unani medicine and delivered with modern clinical precision by our specialist, Hakim Anees Rahman K.</p>
+<!-- ─── Rebuilt Services ─── -->
+<section class="section-white section-shell">
+  <div class="services-shell">
+    <div class="services-head">
+      <div>
+        <span class="eyebrow">What We Offer</span>
+        <h2>Three pillars of holistic care</h2>
+      </div>
+      <p>Each treatment is personalised, clinically structured, and designed to create long-term wellbeing rather than short-term symptom management.</p>
     </div>
-
     <div class="services-grid">
       <!-- Unani Consultation -->
       <div class="card service-card">
