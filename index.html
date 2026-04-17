@@ -272,14 +272,14 @@
 
     @media (max-width: 900px) {
       .hero-wrap {
-        min-height: min(100svh, 900px);
+        min-height: 86svh;
         place-items: start center;
         padding-bottom: env(safe-area-inset-bottom, 0px);
       }
       .hero-core {
         margin-top: 0;
         width: calc(100% - 22px);
-        padding: 22px 14px calc(96px + env(safe-area-inset-bottom, 16px));
+        padding: 12px 14px calc(48px + env(safe-area-inset-bottom, 10px));
         text-align: center;
       }
       .hero-heading {
@@ -301,10 +301,10 @@
       .pillars { grid-template-columns: 1fr 1fr; }
     }
     @media (max-width: 360px) {
-      .hero-wrap { min-height: min(100svh, 820px); }
+      .hero-wrap { min-height: 82svh; }
       .hero-core {
         width: calc(100% - 16px);
-        padding: 16px 10px calc(104px + env(safe-area-inset-bottom, 20px));
+        padding: 10px 10px calc(36px + env(safe-area-inset-bottom, 8px));
       }
       .hero-heading {
         font-size: clamp(1.48rem, 7.6vw, 1.92rem);

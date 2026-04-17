@@ -667,7 +667,7 @@ footer {
 /* Inner-page heroes: headings start high on mobile, consistent rhythm */
 @media (max-width: 900px) {
   .page-hero {
-    padding: max(10px, env(safe-area-inset-top, 0px)) max(18px, env(safe-area-inset-right, 0px)) 48px max(18px, env(safe-area-inset-left, 0px)) !important;
+    padding: max(6px, env(safe-area-inset-top, 0px)) max(16px, env(safe-area-inset-right, 0px)) 34px max(16px, env(safe-area-inset-left, 0px)) !important;
     text-align: left !important;
   }
   .page-hero .hero-copy {
@@ -697,7 +697,7 @@ footer {
 
 @media (max-width: 480px) {
   .page-hero {
-    padding: max(8px, env(safe-area-inset-top, 0px)) max(14px, env(safe-area-inset-right, 0px)) 40px max(14px, env(safe-area-inset-left, 0px)) !important;
+    padding: max(4px, env(safe-area-inset-top, 0px)) max(12px, env(safe-area-inset-right, 0px)) 30px max(12px, env(safe-area-inset-left, 0px)) !important;
   }
   .page-hero h1 {
     margin-bottom: 10px;
@@ -706,7 +706,7 @@ footer {
 
 @media (max-width: 360px) {
   .page-hero {
-    padding: max(6px, env(safe-area-inset-top, 0px)) max(12px, env(safe-area-inset-right, 0px)) 34px max(12px, env(safe-area-inset-left, 0px)) !important;
+    padding: max(2px, env(safe-area-inset-top, 0px)) max(10px, env(safe-area-inset-right, 0px)) 24px max(10px, env(safe-area-inset-left, 0px)) !important;
   }
 }
 
@@ -729,6 +729,8 @@ footer {
 /* ─── Responsive ─── */
 @media (max-width: 768px) {
   :root { --section-pad: 58px 20px; }
+  html, body { overflow-x: hidden; }
+  img, iframe, video { max-width: 100%; }
   .cursor-glow { display: none; }
   body { font-size: 15px; line-height: 1.65; }
   h1 { font-size: clamp(2rem, 9vw, 2.7rem); }
@@ -754,7 +756,7 @@ footer {
     top: 0;
     right: 0;
     width: min(84vw, 340px);
-    height: 100vh;
+    height: 100dvh;
     background: rgba(28,24,20,0.98);
     border-left: 1px solid rgba(232,217,184,0.12);
     backdrop-filter: blur(16px);
@@ -766,6 +768,7 @@ footer {
     transform: translateX(100%);
     transition: transform 0.28s ease;
     box-shadow: -14px 0 30px rgba(8,7,6,0.24);
+    overflow-y: auto;
   }
   .nav-links a {
     color: rgba(250,248,243,0.94);
