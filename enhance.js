@@ -15,16 +15,17 @@ document.addEventListener("DOMContentLoaded", () => {
 
   // Subtle section reveal
   const revealSelectors = [
-    "section",
-    ".card",
+    ".section-shell",
     ".service-card",
-    ".gallery-item",
-    ".pricing-table",
-    ".info-card",
-    ".hero-image",
-    ".about-image",
-    ".story-image",
-    ".doctor-image"
+    ".about-teaser",
+    ".pillar",
+    ".testimonial-inner",
+    ".video-showcase",
+    ".faq-item",
+    ".story-grid",
+    ".doctor-grid",
+    ".contact-grid",
+    ".gallery-intro"
   ];
   const revealNodes = document.querySelectorAll(revealSelectors.join(", "));
   const reduceMotion = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
@@ -39,7 +40,7 @@ document.addEventListener("DOMContentLoaded", () => {
           }
         });
       },
-      { threshold: 0.12, rootMargin: "0px 0px -40px 0px" }
+      { threshold: 0.2, rootMargin: "0px 0px -12% 0px" }
     );
     revealNodes.forEach((node) => observer.observe(node));
   }
@@ -83,8 +84,17 @@ document.addEventListener("DOMContentLoaded", () => {
     const syncScrolledNav = () => {
       nav.classList.toggle("nav-scrolled", window.scrollY > 60);
     };
+    let navTicking = false;
+    const onScrollNav = () => {
+      if (navTicking) return;
+      navTicking = true;
+      window.requestAnimationFrame(() => {
+        syncScrolledNav();
+        navTicking = false;
+      });
+    };
     syncScrolledNav();
-    window.addEventListener("scroll", syncScrolledNav, { passive: true });
+    window.addEventListener("scroll", onScrollNav, { passive: true });
   }
   if (nav && navToggle) {
     navToggle.addEventListener("click", () => {

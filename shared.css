@@ -43,7 +43,7 @@
 
 *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
 
-html { scroll-behavior: smooth; }
+html { scroll-behavior: auto; }
 
 body {
   background:
@@ -473,9 +473,8 @@ section {
 /* ─── Scroll reveal animation ─── */
 .reveal {
   opacity: 0;
-  transform: translateY(12px);
-  transition: opacity 380ms cubic-bezier(0.22, 1, 0.36, 1), transform 380ms cubic-bezier(0.22, 1, 0.36, 1);
-  will-change: opacity, transform;
+  transform: translateY(16px);
+  transition: opacity 720ms cubic-bezier(0.22, 1, 0.36, 1), transform 720ms cubic-bezier(0.22, 1, 0.36, 1);
 }
 .reveal.reveal-in {
   opacity: 1;
@@ -930,11 +929,6 @@ footer {
 
   .hero-wrap .hero-copy,
   .page-hero p {
-    display: -webkit-box;
-    -webkit-line-clamp: 1;
-    -webkit-box-orient: vertical;
-    overflow: hidden;
-    text-overflow: ellipsis;
     margin-bottom: 20px !important;
   }
 
@@ -979,6 +973,7 @@ footer {
   align-items: center !important;
   justify-content: center !important;
   text-align: center !important;
+  min-height: clamp(520px, 78vh, 760px) !important;
 }
 
 .hero-wrap .hero-core,
@@ -1037,6 +1032,11 @@ footer {
 }
 
 @media (max-width: 768px) {
+  .hero-wrap,
+  .page-hero {
+    min-height: 88dvh !important;
+  }
+
   .hero-wrap .hero-heading,
   .page-hero h1 {
     width: 94% !important;
@@ -1050,6 +1050,11 @@ footer {
     grid-template-columns: 1fr !important;
     gap: 16px !important;
     justify-items: center !important;
+  }
+
+  /* Prevent duplicated top spacing after About hero */
+  .story-section {
+    padding: 0 !important;
   }
 }
 
