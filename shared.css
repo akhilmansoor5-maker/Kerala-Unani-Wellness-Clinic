@@ -685,66 +685,77 @@ footer {
   border-bottom: 1px solid var(--border);
 }
 
-/* Inner-page heroes: headings start high on mobile, consistent rhythm */
+/* Inner-page heroes: cleaner mobile rhythm */
 @media (max-width: 900px) {
   .page-hero {
-    padding: max(6px, env(safe-area-inset-top, 0px)) max(16px, env(safe-area-inset-right, 0px)) 34px max(16px, env(safe-area-inset-left, 0px)) !important;
-    text-align: left !important;
+    padding: max(16px, env(safe-area-inset-top, 0px)) max(16px, env(safe-area-inset-right, 0px)) 52px max(16px, env(safe-area-inset-left, 0px)) !important;
+    text-align: center !important;
   }
   .page-hero .hero-copy {
     padding-top: 0 !important;
     padding-bottom: 0 !important;
+    margin-left: auto;
+    margin-right: auto;
   }
   .page-hero .eyebrow {
-    margin-bottom: 8px;
+    margin-bottom: 10px;
   }
   .page-hero h1 {
     margin-top: 0;
-    margin-bottom: 12px;
+    margin-bottom: 16px;
     letter-spacing: -0.02em;
-    max-width: 100% !important;
+    max-width: 15ch !important;
+    margin-left: auto;
+    margin-right: auto;
+    line-height: 1.12;
     text-shadow: 0 2px 24px rgba(8, 6, 5, 0.35);
   }
   .page-hero p {
-    margin-bottom: 16px !important;
+    margin-bottom: 20px !important;
+    max-width: 44ch !important;
+    margin-left: auto;
+    margin-right: auto;
   }
   .page-hero .hero-contact-points {
-    gap: 9px;
-  }
-  .page-hero .hero-contact-item {
-    line-height: 1.45;
+    display: none;
   }
 }
 
 @media (max-width: 480px) {
   .page-hero {
-    padding: max(4px, env(safe-area-inset-top, 0px)) max(12px, env(safe-area-inset-right, 0px)) 30px max(12px, env(safe-area-inset-left, 0px)) !important;
+    padding: max(12px, env(safe-area-inset-top, 0px)) max(12px, env(safe-area-inset-right, 0px)) 42px max(12px, env(safe-area-inset-left, 0px)) !important;
   }
   .page-hero h1 {
-    margin-bottom: 10px;
+    margin-bottom: 14px;
+    max-width: 14ch !important;
   }
 }
 
 @media (max-width: 360px) {
   .page-hero {
-    padding: max(2px, env(safe-area-inset-top, 0px)) max(10px, env(safe-area-inset-right, 0px)) 24px max(10px, env(safe-area-inset-left, 0px)) !important;
+    padding: max(10px, env(safe-area-inset-top, 0px)) max(10px, env(safe-area-inset-right, 0px)) 34px max(10px, env(safe-area-inset-left, 0px)) !important;
   }
 }
 
 /* Home hero: align content to top on small screens */
 @media (max-width: 900px) {
   .hero-wrap .hero-core {
-    padding-top: max(10px, env(safe-area-inset-top, 0px)) !important;
+    padding-top: max(20px, env(safe-area-inset-top, 0px)) !important;
   }
-  .hero-wrap .hero-signature {
-    margin-bottom: 10px;
-  }
-  .hero-wrap .hero-overline {
-    margin-bottom: 10px;
-  }
-  .hero-wrap .hero-heading {
-    margin-bottom: 14px;
-  }
+}
+
+.cta-band {
+  text-align: center !important;
+}
+.cta-band h2,
+.cta-band p {
+  margin-left: auto !important;
+  margin-right: auto !important;
+  max-width: 640px;
+}
+.cta-actions {
+  justify-content: center !important;
+  align-items: center;
 }
 
 /* ─── Responsive ─── */
