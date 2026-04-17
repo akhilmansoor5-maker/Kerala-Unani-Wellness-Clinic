@@ -733,9 +733,9 @@ footer {
   img, iframe, video { max-width: 100%; }
   .cursor-glow { display: none; }
   body { font-size: 15px; line-height: 1.65; }
-  h1 { font-size: clamp(2rem, 9vw, 2.7rem); }
-  h2 { font-size: clamp(1.55rem, 7vw, 2.1rem); }
-  h3 { font-size: 1.22rem; }
+  h1 { font-size: clamp(1.72rem, 7.4vw, 2.28rem); }
+  h2 { font-size: clamp(1.4rem, 6vw, 1.86rem); }
+  h3 { font-size: 1.08rem; }
   .btn {
     width: 100%;
     text-align: center;
@@ -802,10 +802,10 @@ footer {
   :root { --section-pad: 48px 14px; }
   body { font-size: 14px; line-height: 1.6; }
   .container { padding: 0 14px; }
-  h1 { font-size: clamp(1.72rem, 8.4vw, 2.2rem); }
-  h2 { font-size: clamp(1.34rem, 6.5vw, 1.75rem); }
-  h3 { font-size: 1.08rem; }
-  p { font-size: 0.92rem; }
+  h1 { font-size: clamp(1.46rem, 7.2vw, 1.9rem); }
+  h2 { font-size: clamp(1.2rem, 5.8vw, 1.52rem); }
+  h3 { font-size: 0.98rem; }
+  p { font-size: 0.88rem; }
   .nav-inner { height: 68px; padding: 0 14px; }
   .nav-logo { font-size: 1.45rem; }
   .nav-logo-tag { font-size: 0.5rem; letter-spacing: 0.16em; }
@@ -846,10 +846,10 @@ footer {
   .nav-toggle { width: 40px; height: 40px; }
   .nav-links { width: min(92vw, 280px); padding: 78px 14px 20px; gap: 14px; }
   .nav-links a { font-size: 11px; letter-spacing: 0.06em; }
-  h1 { font-size: clamp(1.58rem, 8.2vw, 2rem); }
-  h2 { font-size: clamp(1.22rem, 6.2vw, 1.62rem); }
-  h3 { font-size: 1.02rem; }
-  p { font-size: 0.88rem; }
+  h1 { font-size: clamp(1.34rem, 7vw, 1.72rem); }
+  h2 { font-size: clamp(1.1rem, 5.2vw, 1.4rem); }
+  h3 { font-size: 0.92rem; }
+  p { font-size: 0.84rem; }
   .btn {
     padding: 11px 12px;
     font-size: 0.68rem;
